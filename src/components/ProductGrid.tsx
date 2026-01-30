@@ -1,0 +1,113 @@
+import { useState } from 'react';
+import ProductCard from './ProductCard';
+import productsData from '../data/products.json';
+import { SlidersHorizontal } from 'lucide-react';
+
+interface Product {
+  id: number;
+  name: string;
+  category: string;
+  price: number;
+  originalPrice?: number;
+  image: string;
+  colors: string[];
+  sizes: number[];
+  isNew?: boolean;
+  isFeatured?: boolean;
+  description: string;
+}
+
+export default function ProductGrid() {
+  const [selectedCategory, setSelectedCategory] = useState<string>('Todos');
+  const [sortBy, setSortBy] = useState<string>('featured');
+
+  const categories = ['Todos', 'Running', 'Lifestyle', 'Training', 'Basketball', 'Casual', 'Outdoor'];
+
+  // Filter products
+  let filteredProducts: Product[] = selectedCategory === 'Todos'
+    ? productsData
+    : productsData.filter((p) => p.category === selectedCategory);
+
+  // Sort products
+  filteredProducts = [...filteredProducts].sort((a, b) => {
+    if (sortBy === 'price-low') return a.price - b.price;
+    if (sortBy === 'price-high') return b.price - a.price;
+    if (sortBy === 'name') return a.name.localeCompare(b.name);
+    // Default: featured first, then new
+    if (a.isFeatured && !b.isFeatured) return -1;
+    if (!a.isFeatured && b.isFeatured) return 1;
+    if (a.isNew && !b.isNew) return -1;
+    if (!a.isNew && b.isNew) return 1;
+    return 0;
+  });
+
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Nuestra Colección</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Encuentra las zapatillas perfectas para tu estilo y actividad
+          </p>
+        </div>
+
+        {/* Filters */}
+        <div className="mb-8 flex flex-col lg:flex-row gap-4 justify-between items-start lg:items-center">
+          {/* Categories */}
+          <div className="flex flex-wrap gap-2">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-5 py-2.5 rounded-full font-medium transition-all ${
+                  selectedCategory === category
+                    ? 'bg-blue-600 text-white shadow-lg'
+                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          {/* Sort */}
+          <div className="flex items-center gap-3">
+            <SlidersHorizontal className="w-5 h-5 text-gray-500" />
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="bg-white border border-gray-300 rounded-lg px-4 py-2.5 font-medium text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+            >
+              <option value="featured">Destacados</option>
+              <option value="price-low">Precio: Bajo a Alto</option>
+              <option value="price-high">Precio: Alto a Bajo</option>
+              <option value="name">Nombre A-Z</option>
+            </select>
+          </div>
+        </div>
+
+        {/* Products Count */}
+        <div className="mb-6">
+          <p className="text-gray-600">
+            Mostrando <span className="font-semibold">{filteredProducts.length}</span> productos
+          </p>
+        </div>
+
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredProducts.map((product) => (
+            <ProductCard key={product.id} {...product} />
+          ))}
+        </div>
+
+        {/* Empty State */}
+        {filteredProducts.length === 0 && (
+          <div className="text-center py-16">
+            <p className="text-xl text-gray-500">No se encontraron productos en esta categoría</p>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}

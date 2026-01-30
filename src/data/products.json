@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "Zapatillas para niños Skyrocket",
+    "category": "Running",
+    "price": 72.24,
+    "originalPrice": 129.00,
+    "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_600,h_600/global/401221/03/sv01/fnd/PER/fmt/png/Zapatillas-para-ni%C3%B1os-Skyrocket",
+    "colors": ["Negro", "Blanco", "Azul"],
+    "sizes": [38, 39, 40, 41, 42, 43, 44],
+    "isNew": true,
+    "isFeatured": true,
+    "description": "Zapatillas de running de alto rendimiento con tecnología de amortiguación avanzada"
+  },
+  {
+    "id": 2,
+    "name": "Urban Street Classic",
+    "category": "Lifestyle",
+    "price": 89.99,
+    "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=500&fit=crop",
+    "colors": ["Blanco", "Negro", "Gris"],
+    "sizes": [38, 39, 40, 41, 42, 43, 44],
+    "isNew": false,
+    "isFeatured": true,
+    "description": "Estilo urbano clásico para el día a día"
+  },
+  {
+    "id": 3,
+    "name": "Sport Flex Ultra",
+    "category": "Training",
+    "price": 109.99,
+    "originalPrice": 139.99,
+    "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500&h=500&fit=crop",
+    "colors": ["Negro", "Rojo", "Azul"],
+    "sizes": [38, 39, 40, 41, 42, 43, 44, 45],
+    "isNew": true,
+    "isFeatured": false,
+    "description": "Entrenamiento de alto impacto con máxima flexibilidad"
+  },
+  {
+    "id": 4,
+    "name": "Retro Wave 90s",
+    "category": "Lifestyle",
+    "price": 95.99,
+    "image": "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500&h=500&fit=crop",
+    "colors": ["Blanco", "Rosa", "Turquesa"],
+    "sizes": [37, 38, 39, 40, 41, 42, 43],
+    "isNew": false,
+    "isFeatured": true,
+    "description": "Inspirado en los clásicos de los 90s"
+  },
+  {
+    "id": 5,
+    "name": "Speed Racer Elite",
+    "category": "Running",
+    "price": 149.99,
+    "image": "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=500&h=500&fit=crop",
+    "colors": ["Negro", "Amarillo", "Verde"],
+    "sizes": [38, 39, 40, 41, 42, 43, 44, 45],
+    "isNew": true,
+    "isFeatured": false,
+    "description": "Para corredores que buscan velocidad máxima"
+  },
+  {
+    "id": 6,
+    "name": "Comfort Walk Plus",
+    "category": "Casual",
+    "price": 79.99,
+    "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&h=500&fit=crop",
+    "colors": ["Gris", "Beige", "Azul"],
+    "sizes": [37, 38, 39, 40, 41, 42, 43, 44],
+    "isNew": false,
+    "isFeatured": false,
+    "description": "Comodidad todo el día para uso diario"
+  },
+  {
+    "id": 7,
+    "name": "Basketball Pro X",
+    "category": "Basketball",
+    "price": 139.99,
+    "originalPrice": 169.99,
+    "image": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&h=500&fit=crop",
+    "colors": ["Negro", "Rojo", "Blanco"],
+    "sizes": [39, 40, 41, 42, 43, 44, 45],
+    "isNew": true,
+    "isFeatured": true,
+    "description": "Diseño profesional para la cancha"
+  },
+  {
+    "id": 8,
+    "name": "Trail Mountain Pro",
+    "category": "Outdoor",
+    "price": 119.99,
+    "image": "https://images.unsplash.com/photo-1611923134239-a9f1e4f12e97?w=500&h=500&fit=crop",
+    "colors": ["Verde", "Marrón", "Gris"],
+    "sizes": [38, 39, 40, 41, 42, 43, 44, 45],
+    "isNew": false,
+    "isFeatured": false,
+    "description": "Perfectas para terrenos difíciles y senderos"
+  }
+]
