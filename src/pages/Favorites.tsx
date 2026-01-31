@@ -11,7 +11,7 @@ export default function Favorites() {
   const favoriteProducts = products.filter((product) => favorites.includes(product.id));
 
   const handleSendFavoritesToWhatsApp = () => {
-    let message = '❤️ *MI LISTA DE FAVORITOS - TIENDA TOTO*\n\n';
+    let message = '❤️ *MI LISTA DE FAVORITOS - ZAPATOP*\n\n';
     message += 'Me interesan estos productos:\n\n';
     
     favoriteProducts.forEach((product, index) => {

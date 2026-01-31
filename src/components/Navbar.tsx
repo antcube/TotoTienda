@@ -15,7 +15,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="shrink-0 flex items-center cursor-pointer" onClick={() => navigate('/')}>
             <h1 className="text-2xl font-bold text-gray-900">
-              TIENDA<span className="text-blue-600">TOTO</span>
+              Zapa<span className="text-blue-600">Top</span>
             </h1>
           </div>
 

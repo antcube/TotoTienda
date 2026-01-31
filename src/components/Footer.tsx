@@ -16,7 +16,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <h3 className="text-white text-2xl font-bold mb-4">
-              TIENDA<span className="text-blue-500">TOTO</span>
+              Zapa<span className="text-blue-500">Top</span>
             </h3>
             <p className="text-sm mb-6 leading-relaxed">
               Tu catálogo de confianza para las mejores zapatillas deportivas.
@@ -133,8 +133,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 shrink-0 text-blue-500" />
-                <a href="mailto:info@tiendatoto.com" className="text-sm hover:text-white transition">
-                  info@tiendatoto.com
+                <a href="mailto:info@zapatop.com" className="text-sm hover:text-white transition">
+                  info@zapatop.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -152,7 +152,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-400">
-              © 2026 TiendaToto. Todos los derechos reservados.
+              © 2026 ZapaTop. Todos los derechos reservados.
             </p>
             <div className="flex items-center gap-4 text-sm text-gray-400">
               <span>Aceptamos:</span>
