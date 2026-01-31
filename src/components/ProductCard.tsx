@@ -1,9 +1,6 @@
-import { ShoppingCart, Heart } from 'lucide-react';
+import { MessageCircle, Heart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useFavorites } from '../context/FavoritesContext';
-import { useCart } from '../context/CartContext';
-import { useToast } from '../context/ToastContext';
-import products from '../data/products.json';
 
 interface ProductCardProps {
   id: number;
@@ -24,8 +21,6 @@ export default function ProductCard({
 }: ProductCardProps) {
   const navigate = useNavigate();
   const { toggleFavorite, isFavorite } = useFavorites();
-  const { addToCart } = useCart();
-  const { showToast } = useToast();
   const isProductFavorite = isFavorite(id);
 
   const handleFavoriteClick = (e: React.MouseEvent) => {
@@ -33,21 +28,13 @@ export default function ProductCard({
     toggleFavorite(id);
   };
 
-  const handleQuickAdd = (e: React.MouseEvent) => {
+  const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    const product = products.find((p) => p.id === id);
-    if (product && product.sizes.length > 0) {
-      // Agregar con la primera talla disponible
-      addToCart({
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        image: product.image,
-        size: product.sizes[0],
-        category: product.category,
-      });
-      showToast(`${product.name} añadido al carrito`);
-    }
+    const message = `Hola! Me interesa este producto:\n\n*${name}*\nPrecio: S/ ${price.toFixed(2)}\n\n¿Está disponible?`;
+    const encodedMessage = encodeURIComponent(message);
+    const phoneNumber = '51958018646'; // Usa el número principal
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -86,13 +73,13 @@ export default function ProductCard({
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         
-        {/* Quick Add Button */}
+        {/* WhatsApp Button */}
         <button 
-          onClick={handleQuickAdd}
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black text-white px-6 py-2.5 rounded-full font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-gray-800 flex items-center gap-2 translate-y-4 group-hover:translate-y-0"
+          onClick={handleWhatsAppClick}
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-green-600 text-white px-6 py-2.5 rounded-full font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-green-700 flex items-center gap-2 translate-y-4 group-hover:translate-y-0"
         >
-          <ShoppingCart className="w-4 h-4" />
-          Añadir al carrito
+          <MessageCircle className="w-4 h-4" />
+          Consultar por WhatsApp
         </button>
       </div>
 

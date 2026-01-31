@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Heart, ShoppingBag } from 'lucide-react';
+import { Heart, ShoppingBag, MessageCircle } from 'lucide-react';
 import { useFavorites } from '../context/FavoritesContext';
 import products from '../data/products.json';
 import ProductCard from '../components/ProductCard';
@@ -9,6 +9,23 @@ export default function Favorites() {
   const { favorites, favoritesCount } = useFavorites();
 
   const favoriteProducts = products.filter((product) => favorites.includes(product.id));
+
+  const handleSendFavoritesToWhatsApp = () => {
+    let message = '❤️ *MI LISTA DE FAVORITOS - TIENDA TOTO*\n\n';
+    message += 'Me interesan estos productos:\n\n';
+    
+    favoriteProducts.forEach((product, index) => {
+      message += `${index + 1}. *${product.name}*\n`;
+      message += `   💰 S/ ${product.price.toFixed(2)}\n\n`;
+    });
+    
+    message += '¿Podrían darme más información sobre disponibilidad? 😊';
+    
+    const encodedMessage = encodeURIComponent(message);
+    const phoneNumber = '51958018646'; // Número principal
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   if (favoritesCount === 0) {
     return (
@@ -40,13 +57,24 @@ export default function Favorites() {
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-12">
-          <div className="flex items-center gap-4 mb-3">
-            <Heart className="w-10 h-10 text-red-500 fill-red-500" />
-            <h1 className="text-4xl font-bold text-gray-900">Mis Favoritos</h1>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-4 mb-3">
+                <Heart className="w-10 h-10 text-red-500 fill-red-500" />
+                <h1 className="text-4xl font-bold text-gray-900">Mis Favoritos</h1>
+              </div>
+              <p className="text-gray-600 text-lg">
+                {favoritesCount} {favoritesCount === 1 ? 'producto guardado' : 'productos guardados'}
+              </p>
+            </div>
+            <button
+              onClick={handleSendFavoritesToWhatsApp}
+              className="bg-green-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-700 transition-all flex items-center justify-center gap-2 shrink-0"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Enviar lista por WhatsApp
+            </button>
           </div>
-          <p className="text-gray-600 text-lg">
-            {favoritesCount} {favoritesCount === 1 ? 'producto guardado' : 'productos guardados'}
-          </p>
         </div>
       </div>
 
