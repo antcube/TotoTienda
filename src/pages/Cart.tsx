@@ -1,10 +1,50 @@
 import { useNavigate } from 'react-router-dom';
-import { ShoppingBag, Trash2, Plus, Minus, ArrowRight } from 'lucide-react';
+import { ShoppingBag, Trash2, Plus, Minus, MessageCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 export default function Cart() {
   const navigate = useNavigate();
   const { items, removeFromCart, updateQuantity, totalItems, subtotal, shipping, total } = useCart();
+
+  const generateWhatsAppMessage = () => {
+    // Generar mensaje de WhatsApp con los detalles del pedido
+    let message = '🛍️ *NUEVA ORDEN - TIENDA TOTO*\n\n';
+    message += '*Productos:*\n';
+    
+    items.forEach((item, index) => {
+      message += `${index + 1}. ${item.name}\n`;
+      message += `   📏 Talla: ${item.size} US\n`;
+      message += `   📦 Cantidad: ${item.quantity}\n`;
+      message += `   💰 Precio: S/ ${(item.price * item.quantity).toFixed(2)}\n\n`;
+    });
+    
+    message += '━━━━━━━━━━━━━━━━━━\n';
+    message += `*Subtotal:* S/ ${subtotal.toFixed(2)}\n`;
+    message += `*Envío:* ${shipping === 0 ? 'GRATIS 🎉' : `S/ ${shipping.toFixed(2)}`}\n`;
+    message += `*TOTAL:* S/ ${total.toFixed(2)}\n\n`;
+    message += '¿Deseas confirmar esta orden? 😊';
+    
+    return message;
+  };
+
+  const handleSendToWhatsApp = () => {
+    const message = generateWhatsAppMessage();
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Números de WhatsApp (reemplaza con tus números)
+    const phoneNumbers = [
+      '51958018646',  // Número 1
+      '51957748377',  // Número 2
+    ];
+    
+    // Abrir WhatsApp para cada número
+    phoneNumbers.forEach((phoneNumber, index) => {
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+      }, index * 500); // Delay de 500ms entre cada ventana para evitar bloqueo del navegador
+    });
+  };
 
   if (totalItems === 0) {
     return (
@@ -167,9 +207,12 @@ export default function Cart() {
                 </div>
               </div>
 
-              <button className="w-full bg-black text-white py-4 rounded-xl font-bold text-lg hover:bg-gray-800 transition-all flex items-center justify-center gap-2 mb-3">
-                Proceder al pago
-                <ArrowRight className="w-5 h-5" />
+              <button 
+                onClick={handleSendToWhatsApp}
+                className="w-full bg-green-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition-all flex items-center justify-center gap-2 mb-3"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Enviar orden por WhatsApp
               </button>
 
               <button
