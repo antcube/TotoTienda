@@ -1,56 +1,82 @@
-import { ArrowRight } from 'lucide-react';
+import { MessageCircle, Heart, Sparkles } from 'lucide-react';
 
 export default function Hero() {
+  const handleWhatsAppClick = () => {
+    const message = 'Hola! Quiero conocer más sobre sus productos 😊';
+    const encodedMessage = encodeURIComponent(message);
+    const phoneNumber = '51958018646';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const scrollToProducts = () => {
+    window.scrollTo({
+      top: 600,
+      behavior: 'smooth'
+    });
+  };
   return (
-    <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+    <div className="relative bg-linear-to-r from-blue-600 to-purple-600 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
             <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-              <span className="text-sm font-semibold">Nueva Colección 2026</span>
+              <span className="text-sm font-semibold">🎉 Recién Inaugurados - Chosica</span>
             </div>
             
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              Impulsa tu
+              Tu nuevo destino
               <br />
-              <span className="text-yellow-300">rendimiento</span>
+              <span className="text-yellow-300">para zapatillas</span>
             </h1>
             
             <p className="text-lg lg:text-xl text-white/90 max-w-md">
-              Descubre las zapatillas diseñadas para llevarte más lejos. 
-              Tecnología, estilo y comodidad en cada paso.
+              Estamos iniciando con entusiasmo para ofrecerte las mejores zapatillas.
+              Calidad, variedad y atención personalizada.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition flex items-center justify-center group">
-                Comprar ahora
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition" />
+              <button 
+                onClick={handleWhatsAppClick}
+                className="bg-green-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-700 transition flex items-center justify-center gap-2"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Consultar por WhatsApp
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition">
-                Ver colección
+              <button 
+                onClick={scrollToProducts}
+                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition"
+              >
+                Ver catálogo
               </button>
             </div>
             
             <div className="flex gap-8 pt-4">
               <div>
-                <p className="text-3xl font-bold">500+</p>
-                <p className="text-white/80">Modelos</p>
+                <p className="text-3xl font-bold flex items-center gap-2">
+                  <Sparkles className="w-8 h-8 text-yellow-300" />
+                  Nuevo
+                </p>
+                <p className="text-white/80">Recién abierto</p>
               </div>
               <div>
-                <p className="text-3xl font-bold">50K+</p>
-                <p className="text-white/80">Clientes</p>
+                <p className="text-3xl font-bold flex items-center gap-2">
+                  <Heart className="w-8 h-8 text-red-400" />
+                  100%
+                </p>
+                <p className="text-white/80">Dedicación</p>
               </div>
               <div>
-                <p className="text-3xl font-bold">4.9★</p>
-                <p className="text-white/80">Rating</p>
+                <p className="text-3xl font-bold">Chosica</p>
+                <p className="text-white/80">Lima, Perú</p>
               </div>
             </div>
           </div>
 
           {/* Right Image */}
           <div className="relative hidden lg:block">
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-pink-500/20 rounded-full blur-3xl"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-yellow-400/20 to-pink-500/20 rounded-full blur-3xl"></div>
             <img
               src="https://images.puma.com/image/upload/f_auto,q_auto,e_sharpen:95,w_2000,h_2000/global/392328/53/sv04/fnd/PER/fmt/png/Zapatillas-Rebound-V6-Low-unisex"
               alt="Featured Sneaker"
