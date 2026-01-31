@@ -27,23 +27,17 @@ export default function Cart() {
     return message;
   };
 
-  const handleSendToWhatsApp = () => {
+  const handleSendToWhatsApp = (phoneNumber: string) => {
     const message = generateWhatsAppMessage();
     const encodedMessage = encodeURIComponent(message);
-    
-    // Números de WhatsApp (reemplaza con tus números)
-    const phoneNumbers = [
-      '51958018646',  // Número 1
-      '51957748377',  // Número 2
-    ];
-    
-    // Abrir WhatsApp para cada número
-    phoneNumbers.forEach((phoneNumber, index) => {
-      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-      setTimeout(() => {
-        window.open(whatsappUrl, '_blank');
-      }, index * 500); // Delay de 500ms entre cada ventana para evitar bloqueo del navegador
-    });
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  // Números de WhatsApp
+  const whatsappNumbers = {
+    numero1: '51958018646',
+    numero2: '51957748377',
   };
 
   if (totalItems === 0) {
@@ -207,13 +201,25 @@ export default function Cart() {
                 </div>
               </div>
 
-              <button 
-                onClick={handleSendToWhatsApp}
-                className="w-full bg-green-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition-all flex items-center justify-center gap-2 mb-3"
-              >
-                <MessageCircle className="w-5 h-5" />
-                Enviar orden por WhatsApp
-              </button>
+              <div className="space-y-2 mb-3">
+                <p className="text-sm font-semibold text-gray-700 text-center mb-2">
+                  Enviar orden a:
+                </p>
+                <button 
+                  onClick={() => handleSendToWhatsApp(whatsappNumbers.numero1)}
+                  className="w-full bg-green-600 text-white py-3.5 rounded-xl font-bold text-base hover:bg-green-700 transition-all flex items-center justify-center gap-2"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  WhatsApp 1
+                </button>
+                <button 
+                  onClick={() => handleSendToWhatsApp(whatsappNumbers.numero2)}
+                  className="w-full bg-green-600 text-white py-3.5 rounded-xl font-bold text-base hover:bg-green-700 transition-all flex items-center justify-center gap-2"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  WhatsApp 2
+                </button>
+              </div>
 
               <button
                 onClick={() => navigate('/')}
