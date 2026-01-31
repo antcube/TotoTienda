@@ -8,9 +8,9 @@ interface Product {
   name: string;
   category: string;
   price: number;
-  originalPrice?: number;
   image: string;
-  colors: string[];
+  images: string[];
+  brand: string;
   sizes: number[];
   isNew?: boolean;
   isFeatured?: boolean;
