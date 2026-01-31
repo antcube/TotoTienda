@@ -12,3 +12,5 @@ export interface BrandSizeGuide {
 }
 
 export type Brand = 'Puma' | 'Adidas';
+
+export type SizeCategory = 'men' | 'women' | 'kids' | 'all';

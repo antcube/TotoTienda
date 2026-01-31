@@ -3,6 +3,7 @@ import { ArrowLeft, ShoppingCart, Heart, Truck, Shield, RotateCcw, Ruler } from 
 import { useState } from 'react';
 import products from '../data/products.json';
 import SizeGuideModal from '../components/SizeGuideModal';
+import type { SizeCategory } from '../data/sizeguides';
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -12,6 +13,22 @@ export default function ProductDetail() {
   const [showSizeGuide, setShowSizeGuide] = useState(false);
 
   const product = products.find((p) => p.id === Number(id));
+
+  // Determinar la categoría de talla basándose en el nombre del producto
+  const getSizeCategory = (): SizeCategory => {
+    if (!product) return 'all';
+    const name = product.name.toLowerCase();
+    if (name.includes('niño') || name.includes('niña') || name.includes('infantil') || name.includes('bebé')) {
+      return 'kids';
+    }
+    if (name.includes('mujer') || name.includes('dama')) {
+      return 'women';
+    }
+    if (name.includes('hombre') || name.includes('caballero')) {
+      return 'men';
+    }
+    return 'all';
+  };
 
   if (!product) {
     return (
@@ -36,6 +53,7 @@ export default function ProductDetail() {
         isOpen={showSizeGuide} 
         onClose={() => setShowSizeGuide(false)}
         brand={product.brand as 'Puma' | 'Adidas'}
+        category={getSizeCategory()}
       />
 
       {/* Header */}

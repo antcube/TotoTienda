@@ -1,18 +1,23 @@
 import { X } from 'lucide-react';
 import { sizeGuides } from '../../data/sizeguides';
-import type { Brand } from '../../data/sizeguides';
+import type { Brand, SizeCategory } from '../../data/sizeguides';
 import SizeTable from './SizeTable';
 
-interface SizeGuideModalProps {
+export interface SizeGuideModalProps {
   isOpen: boolean;
   onClose: () => void;
   brand: Brand;
+  category?: SizeCategory;
 }
 
-export default function SizeGuideModal({ isOpen, onClose, brand }: SizeGuideModalProps) {
+export default function SizeGuideModal({ isOpen, onClose, brand, category = 'all' }: SizeGuideModalProps) {
   if (!isOpen) return null;
 
   const sizeData = sizeGuides[brand];
+
+  const showMen = category === 'all' || category === 'men';
+  const showWomen = category === 'all' || category === 'women';
+  const showKids = category === 'all' || category === 'kids';
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
@@ -31,7 +36,7 @@ export default function SizeGuideModal({ isOpen, onClose, brand }: SizeGuideModa
         {/* Content */}
         <div className="p-6 space-y-8">
           {/* Hombres */}
-          {sizeData.men && (
+          {showMen && sizeData.men && (
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Hombres</h3>
               <SizeTable sizes={sizeData.men} />
@@ -39,7 +44,7 @@ export default function SizeGuideModal({ isOpen, onClose, brand }: SizeGuideModa
           )}
 
           {/* Mujeres */}
-          {sizeData.women && (
+          {showWomen && sizeData.women && (
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Mujeres</h3>
               <SizeTable sizes={sizeData.women} />
@@ -47,7 +52,7 @@ export default function SizeGuideModal({ isOpen, onClose, brand }: SizeGuideModa
           )}
 
           {/* Niños */}
-          {sizeData.kids && (
+          {showKids && sizeData.kids && (
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Zapatillas para niños</h3>
               

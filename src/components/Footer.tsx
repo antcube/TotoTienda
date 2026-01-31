@@ -111,15 +111,15 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Contacto</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
+                <MapPin className="w-5 h-5 mt-1 shrink-0" />
                 <span className="text-sm">Av. Principal 123, Ciudad, País</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 flex-shrink-0" />
+                <Phone className="w-5 h-5 shrink-0" />
                 <span className="text-sm">+1 234 567 8900</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 flex-shrink-0" />
+                <Mail className="w-5 h-5 shrink-0" />
                 <span className="text-sm">info@tiendatoto.com</span>
               </li>
             </ul>
