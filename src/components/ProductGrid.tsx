@@ -1,12 +1,14 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ProductCard from './ProductCard';
 import productsData from '../data/products.json';
-import { SlidersHorizontal } from 'lucide-react';
+import { SlidersHorizontal, X } from 'lucide-react';
 
 interface Product {
   id: number;
   name: string;
   category: string;
+  gender: string;
   price: number;
   image: string;
   images: string[];
@@ -17,16 +19,26 @@ interface Product {
   description: string;
 }
 
-export default function ProductGrid() {
+interface ProductGridProps {
+  genderFilter?: string;
+}
+
+export default function ProductGrid({ genderFilter }: ProductGridProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>('Todos');
   const [sortBy, setSortBy] = useState<string>('featured');
+  const navigate = useNavigate();
 
   const categories = ['Todos', 'Running', 'Lifestyle', 'Training', 'Basketball', 'Casual', 'Outdoor'];
 
-  // Filter products
-  let filteredProducts: Product[] = selectedCategory === 'Todos'
-    ? productsData
-    : productsData.filter((p) => p.category === selectedCategory);
+  // Filter by gender first
+  let filteredProducts: Product[] = genderFilter
+    ? productsData.filter((p) => p.gender === genderFilter)
+    : productsData;
+
+  // Then filter by category
+  filteredProducts = selectedCategory === 'Todos'
+    ? filteredProducts
+    : filteredProducts.filter((p) => p.category === selectedCategory);
 
   // Sort products
   filteredProducts = [...filteredProducts].sort((a, b) => {
@@ -46,10 +58,21 @@ export default function ProductGrid() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Nuestra Colección</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            {genderFilter ? `Calzado para ${genderFilter}` : 'Nuestra Colección'}
+          </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Encuentra las zapatillas perfectas para tu estilo y actividad
           </p>
+          {genderFilter && (
+            <button
+              onClick={() => navigate('/')}
+              className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full font-medium transition"
+            >
+              <X className="w-4 h-4" />
+              Ver todos los productos
+            </button>
+          )}
         </div>
 
         {/* Filters */}

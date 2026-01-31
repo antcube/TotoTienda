@@ -1,12 +1,17 @@
 import { Search, Menu, Heart } from 'lucide-react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useFavorites } from '../context/FavoritesContext';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
   const { favoritesCount } = useFavorites();
+  
+  // Obtener el parámetro de género de la URL
+  const searchParams = new URLSearchParams(location.search);
+  const activeGender = searchParams.get('gender');
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -20,22 +25,37 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition">
+          <div className="hidden md:flex items-center space-x-12">
+            <button 
+              onClick={() => navigate('/?gender=Hombre')}
+              className={`font-medium text-lg transition ${
+                activeGender === 'Hombre' 
+                  ? 'text-blue-600 border-b-2 border-blue-600' 
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
               Hombre
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition">
+            </button>
+            <button 
+              onClick={() => navigate('/?gender=Mujer')}
+              className={`font-medium text-lg transition ${
+                activeGender === 'Mujer' 
+                  ? 'text-blue-600 border-b-2 border-blue-600' 
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
               Mujer
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition">
+            </button>
+            <button 
+              onClick={() => navigate('/?gender=Ni%C3%B1os')}
+              className={`font-medium text-lg transition ${
+                activeGender === 'Niños' 
+                  ? 'text-blue-600 border-b-2 border-blue-600' 
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
               Niños
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition">
-              Ofertas
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition">
-              Novedades
-            </a>
+            </button>
           </div>
 
           {/* Right Icons */}
@@ -83,21 +103,36 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="px-4 pt-2 pb-4 space-y-2">
-            <a href="#" className="block py-2 text-gray-700 hover:text-blue-600 font-medium">
+            <button 
+              onClick={() => { navigate('/?gender=Hombre'); setIsMenuOpen(false); }}
+              className={`block py-2 font-medium text-lg w-full text-left ${
+                activeGender === 'Hombre'
+                  ? 'text-blue-600'
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
               Hombre
-            </a>
-            <a href="#" className="block py-2 text-gray-700 hover:text-blue-600 font-medium">
+            </button>
+            <button 
+              onClick={() => { navigate('/?gender=Mujer'); setIsMenuOpen(false); }}
+              className={`block py-2 font-medium text-lg w-full text-left ${
+                activeGender === 'Mujer'
+                  ? 'text-blue-600'
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
               Mujer
-            </a>
-            <a href="#" className="block py-2 text-gray-700 hover:text-blue-600 font-medium">
+            </button>
+            <button 
+              onClick={() => { navigate('/?gender=Ni%C3%B1os'); setIsMenuOpen(false); }}
+              className={`block py-2 font-medium text-lg w-full text-left ${
+                activeGender === 'Niños'
+                  ? 'text-blue-600'
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
               Niños
-            </a>
-            <a href="#" className="block py-2 text-gray-700 hover:text-blue-600 font-medium">
-              Ofertas
-            </a>
-            <a href="#" className="block py-2 text-gray-700 hover:text-blue-600 font-medium">
-              Novedades
-            </a>
+            </button>
           </div>
         </div>
       )}
