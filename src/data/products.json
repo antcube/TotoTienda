@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Zapatillas para niños Skyrocket",
-    "category": "Running",
+    "category": "Deportivas",
     "gender": "Niños",
     "price": 129.00,
     "brand": "Puma",
@@ -40,7 +40,7 @@
   {
     "id": 3,
     "name": "Zapatillas para bebés de running Flyer Lite 3",
-    "category": "Running",
+    "category": "Deportivas",
     "gender": "Niños",
     "price": 103.20,
     "brand": "Puma",
@@ -58,7 +58,7 @@
   {
     "id": 4,
     "name": "Zapatillas para bebés de running Flyer Lite 3",
-    "category": "Running",
+    "category": "Deportivas",
     "gender": "Niños",
     "price": 103.20,
     "brand": "Puma",
@@ -76,7 +76,7 @@
   {
     "id": 5,
     "name": "Zapatillas para bebés de running Flyer Lite 3",
-    "category": "Running",
+    "category": "Deportivas",
     "gender": "Niños",
     "price": 103.20,
     "brand": "Puma",
@@ -94,7 +94,7 @@
   {
     "id": 6,
     "name": "Zapatillas para bebés de running Flyer Lite 3",
-    "category": "Running",
+    "category": "Deportivas",
     "gender": "Niños",
     "price": 103.20,
     "brand": "Puma",
@@ -112,7 +112,7 @@
   {
     "id": 7,
     "name": "Zapatillas para bebés de running Flyer Lite 3",
-    "category": "Running",
+    "category": "Deportivas",
     "gender": "Niños",
     "price": 103.20,
     "brand": "Puma",

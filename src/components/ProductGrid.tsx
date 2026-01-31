@@ -28,12 +28,20 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
   const [sortBy, setSortBy] = useState<string>('featured');
   const navigate = useNavigate();
 
-  const categories = ['Todos', 'Running', 'Lifestyle', 'Training', 'Basketball', 'Casual', 'Outdoor'];
+  // Cambiar categorías según el género seleccionado
+  const categories = genderFilter === 'Niños' 
+    ? ['Todos', 'Deportivas', 'Urbanas']
+    : ['Todos', 'Running', 'Training', 'Outdoor', 'Urbanas'];
 
   // Filter by gender first
-  // Products with gender "Unisex" should appear in both Hombre and Mujer categories
+  // Products with gender "Unisex" should appear in both Hombre and Mujer categories (not in Niños)
   let filteredProducts: Product[] = genderFilter
-    ? productsData.filter((p) => p.gender === genderFilter || p.gender === 'Unisex')
+    ? productsData.filter((p) => {
+        if (p.gender === genderFilter) return true;
+        // Unisex products only appear in Hombre and Mujer, not in Niños
+        if (p.gender === 'Unisex' && (genderFilter === 'Hombre' || genderFilter === 'Mujer')) return true;
+        return false;
+      })
     : productsData;
 
   // Then filter by category
