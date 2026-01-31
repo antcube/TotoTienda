@@ -5,7 +5,7 @@ import productsData from '../data/products.json';
 import { SlidersHorizontal, X } from 'lucide-react';
 
 interface Product {
-  id: number;
+  id: number | string;
   name: string;
   category: string;
   gender: string;
@@ -31,8 +31,9 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
   const categories = ['Todos', 'Running', 'Lifestyle', 'Training', 'Basketball', 'Casual', 'Outdoor'];
 
   // Filter by gender first
+  // Products with gender "Unisex" should appear in both Hombre and Mujer categories
   let filteredProducts: Product[] = genderFilter
-    ? productsData.filter((p) => p.gender === genderFilter)
+    ? productsData.filter((p) => p.gender === genderFilter || p.gender === 'Unisex')
     : productsData;
 
   // Then filter by category

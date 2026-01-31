@@ -14,7 +14,7 @@ export default function ProductDetail() {
   const [showSizeGuide, setShowSizeGuide] = useState(false);
   const { toggleFavorite, isFavorite } = useFavorites();
 
-  const product = products.find((p) => p.id === Number(id));
+  const product = products.find((p) => p.id.toString() === id);
   const isProductFavorite = product ? isFavorite(product.id) : false;
 
   const handleFavoriteClick = () => {
@@ -41,7 +41,16 @@ export default function ProductDetail() {
   // Determinar la categoría de talla basándose en el nombre del producto
   const getSizeCategory = (): SizeCategory => {
     if (!product) return 'all';
+    
+    // Check gender field first
+    if (product.gender === 'Unisex') {
+      return 'unisex';
+    }
+    
     const name = product.name.toLowerCase();
+    if (name.includes('unisex')) {
+      return 'unisex';
+    }
     if (name.includes('niño') || name.includes('niña') || name.includes('infantil') || name.includes('bebé')) {
       return 'kids';
     }

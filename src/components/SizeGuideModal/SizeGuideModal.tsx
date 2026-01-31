@@ -18,6 +18,7 @@ export default function SizeGuideModal({ isOpen, onClose, brand, category = 'all
   const showMen = category === 'all' || category === 'men';
   const showWomen = category === 'all' || category === 'women';
   const showKids = category === 'all' || category === 'kids';
+  const showUnisex = category === 'all' || category === 'unisex';
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
@@ -35,6 +36,14 @@ export default function SizeGuideModal({ isOpen, onClose, brand, category = 'all
 
         {/* Content */}
         <div className="p-6 space-y-8">
+          {/* Unisex */}
+          {showUnisex && sizeData.unisex && (
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Calzado Unisex (Hombre/Mujer)</h3>
+              <SizeTable sizes={sizeData.unisex} />
+            </div>
+          )}
+
           {/* Hombres */}
           {showMen && sizeData.men && (
             <div>

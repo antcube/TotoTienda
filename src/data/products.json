@@ -128,21 +128,168 @@
     "description": "Prepárate para divertidas aventuras con estas versátiles zapatillas, diseñadas para los más pequeños y pequeñas. Los cordones elásticos y el cierre de abrojo son ideales para los infantes que no pueden quedarse quietos por mucho tiempo, ya que garantizan que se puedan poner y quitar rápidamente."
   },
   {
-    "id": 8,
-    "name": "Trail Mountain Pro",
-    "category": "Outdoor",
-    "gender": "Hombre",
-    "price": 119.99,
-    "brand": "Adidas",
+    "id": "395205_50",
+    "name": "Zapatillas Rebound V6 Low unisex",
+    "category": "Urbanas",
+    "gender": "Unisex",
+    "price": 160,
+    "brand": "Puma",
     "images": [
-      "https://images.unsplash.com/photo-1611923134239-a9f1e4f12e97?w=500&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1542219550-37153d387c27?w=500&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?w=500&h=500&fit=crop"
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/392328/53/sv01/fnd/PER/fmt/png/Zapatillas-Rebound-V6-Low-unisex",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/392328/53/bv/fnd/PER/fmt/png/Zapatillas-Rebound-V6-Low-unisex",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/392328/53/fv/fnd/PER/fmt/png/Zapatillas-Rebound-V6-Low-unisex"
     ],
-    "image": "https://images.unsplash.com/photo-1611923134239-a9f1e4f12e97?w=500&h=500&fit=crop",
-    "sizes": [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12],
-    "isNew": false,
-    "isFeatured": false,
-    "description": "Perfectas para terrenos difíciles y senderos"
+    "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/392328/53/sv01/fnd/PER/fmt/png/Zapatillas-Rebound-V6-Low-unisex",
+    "sizes": [
+      9
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "description": "Inspiradas en el basketball, las Rebound Low vuelven para cambiar el juego. Esta versión V6 unisex te ofrece una capellada símil cuero de grano grueso y la marca PUMA en la lengüeta. Están pensadas para todos los días, vayas donde vayas."
+  },
+  {
+    "id": "404472_01",
+    "name": "Zapatillas PUMA-180 Pro",
+    "category": "Urbanas",
+    "gender": "Unisex",
+    "price": 285,
+    "brand": "Puma",
+    "images": [
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/404472/01/sv01/fnd/PER/fmt/png/Zapatillas-PUMA-180-Pro",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/404472/01/bv/fnd/PER/fmt/png/Zapatillas-PUMA-180-Pro",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/404472/01/fv/fnd/PER/fmt/png/Zapatillas-PUMA-180-Pro"
+    ],
+    "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/404472/01/sv01/fnd/PER/fmt/png/Zapatillas-PUMA-180-Pro",
+    "sizes": [
+      4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "description": "Las llamativas PUMA-180 son unas zapatillas urbanas inspiradas en la cultura del skate de la década del 2000. Son una mezcla de diseños de los archivos PUMA, con detalles exageradamente acolchados, suela voluminosa y suaves colores naturales para un look sofisticado."
+  },
+  {
+    "id": "404472_02",
+    "name": "Zapatillas PUMA-180 Pro",
+    "category": "Urbanas",
+    "gender": "Unisex",
+    "price": 285,
+    "brand": "Puma",
+    "images": [
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/404472/02/sv01/fnd/PER/fmt/png/Zapatillas-PUMA-180-Pro",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/404472/02/bv/fnd/PER/fmt/png/Zapatillas-PUMA-180-Pro",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/404472/02/fnd/PER/fmt/png/Zapatillas-PUMA-180-Pro"
+    ],
+    "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/404472/02/sv01/fnd/PER/fmt/png/Zapatillas-PUMA-180-Pro",
+    "sizes": [
+      4.5, 5, 5.5, 6, 6.5, 8, 8.5, 9, 9.5, 10
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "description": "Las llamativas PUMA-180 son unas zapatillas urbanas inspiradas en la cultura del skate de la década del 2000. Son una mezcla de diseños de los archivos PUMA, con detalles exageradamente acolchados, suela voluminosa y suaves colores naturales para un look sofisticado."
+  },
+  {
+    "id": "403145_02",
+    "name": "Zapatillas C-Skate Fresh unisex",
+    "category": "Urbanas",
+    "gender": "Unisex",
+    "price": 160,
+    "brand": "Puma",
+    "images": [
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/403145/02/sv01/fnd/PER/fmt/png/Zapatillas-C-Skate-Fresh-unisex",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/403145/02/bv/fnd/PER/fmt/png/Zapatillas-C-Skate-Fresh-unisex",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/403145/02/fv/fnd/PER/fmt/png/Zapatillas-C-Skate-Fresh-unisex",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/403145/02/sv02/fnd/PER/fmt/png/Zapatillas-C-Skate-Fresh-unisex"
+    ],
+    "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/403145/02/sv01/fnd/PER/fmt/png/Zapatillas-C-Skate-Fresh-unisex",
+    "sizes": [
+      9
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "description": "Completa tus looks diarios con estas zapatillas de PUMA. Incorporan una plantilla SOFTFOAM+ para que cada paso sea cómodo y fácil."
+  },
+  {
+    "id": "405065_02",
+    "name": "Zapatillas CA Match Canvas",
+    "category": "Urbanas",
+    "gender": "Unisex",
+    "price": 245,
+    "brand": "Puma",
+    "images": [
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/405065/02/sv01/fnd/PER/fmt/png/Zapatillas-CA-Match-Canvas",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/405065/02/bv/fnd/PER/fmt/png/Zapatillas-CA-Match-Canvas",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/405065/02/fv/fnd/PER/fmt/png/Zapatillas-CA-Match-Canvas",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/405065/02/sv04/fnd/PER/fmt/png/Zapatillas-CA-Match-Canvas"
+    ],
+    "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/405065/02/sv01/fnd/PER/fmt/png/Zapatillas-CA-Match-Canvas",
+    "sizes": [
+      4.5, 5, 5.5, 6, 6.5, 7, 8, 8.5, 9, 9.5, 10
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "description": "Las CA Match continúan con la tradición. Esta versión es la mezcla perfecta de estilo urbano y tenis. Con su diseño simple y de líneas limpias, son fáciles de combinar e ideales para todos los días."
+  },
+  {
+    "id": "405065_01",
+    "name": "Zapatillas CA Match Canvas",
+    "category": "Urbanas",
+    "gender": "Unisex",
+    "price": 245,
+    "brand": "Puma",
+    "images": [
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/405065/01/sv01/fnd/PER/fmt/png/Zapatillas-CA-Match-Canvas",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/405065/01/bv/fnd/PER/fmt/png/Zapatillas-CA-Match-Canvas",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/405065/01/fv/fnd/PER/fmt/png/Zapatillas-CA-Match-Canvas",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/405065/01/sv04/fnd/PER/fmt/png/Zapatillas-CA-Match-Canvas"
+    ],
+    "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/405065/01/sv01/fnd/PER/fmt/png/Zapatillas-CA-Match-Canvas",
+    "sizes": [
+      4.5, 5, 5.5, 6, 6.5, 8, 8.5, 9, 9.5, 10
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "description": "Las CA Match continúan con la tradición. Esta versión es la mezcla perfecta de estilo urbano y tenis. Con su diseño simple y de líneas limpias, son fáciles de combinar e ideales para todos los días."
+  },
+  {
+    "id": "390776_57",
+    "name": "Zapatillas RS-X Efekt unisex",
+    "category": "Urbanas",
+    "gender": "Unisex",
+    "price": 290,
+    "brand": "Puma",
+    "images": [
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/390776/57/sv01/fnd/PER/fmt/png/Zapatillas-RS-X-Efekt-unisex",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/390776/57/bv/fnd/PER/fmt/png/Zapatillas-RS-X-Efekt-unisex",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/390776/57/fv/fnd/PER/fmt/png/Zapatillas-RS-X-Efekt-unisex",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/390776/57/sv04/fnd/PER/fmt/png/Zapatillas-RS-X-Efekt-unisex"
+    ],
+    "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/390776/57/sv01/fnd/PER/fmt/png/Zapatillas-RS-X-Efekt-unisex",
+    "sizes": [
+      4.5, 6.5
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "description": "Las RS-X están de vuelta. Su silueta retro-futurista regresa con una estética progresista y detalles angulosos, que se complementa con apliques de nobuk y gamuza. Esta versión tiene un diseño disruptivo, para que vos muestres tu estilo disruptivo."
+  },
+  {
+    "id": "395205_49",
+    "name": "Zapatillas Suede XL unisex",
+    "category": "Urbanas",
+    "gender": "Unisex",
+    "price": 240,
+    "brand": "Puma",
+    "images": [
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/395205/49/sv01/fnd/PER/fmt/png/Zapatillas-Suede-XL-unisex",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/395205/49/bv/fnd/PER/fmt/png/Zapatillas-Suede-XL-unisex",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/395205/49/fv/fnd/PER/fmt/png/Zapatillas-Suede-XL-unisex",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/395205/49/dt/fnd/PER/fmt/png/Zapatillas-Suede-XL-unisex"
+    ],
+    "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/395205/49/sv01/fnd/PER/fmt/png/Zapatillas-Suede-XL-unisex",
+    "sizes": [
+      4.5, 5, 5.5, 6, 6.5
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "description": "Esta nueva versión de las clásicas zapatillas Suede se inspira en la herencia de PUMA en el mundo del breakdance y en su influencia en el streetwear moderno. Las Suede XL conservan su ADN icónico, pero le dan un giro con un cuello y lengüeta exageradamente acolchados, además de una suela más gruesa. Esta versión luce un empeine completamente en gamuza y una Formstrip PUMA en cuero."
   }
 ]

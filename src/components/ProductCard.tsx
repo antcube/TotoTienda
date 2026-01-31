@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useFavorites } from '../context/FavoritesContext';
 
 interface ProductCardProps {
-  id: number;
+  id: number | string;
   name: string;
   category: string;
   price: number;

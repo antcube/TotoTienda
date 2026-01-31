@@ -9,8 +9,9 @@ export interface BrandSizeGuide {
   men?: SizeRow[];
   women?: SizeRow[];
   kids?: SizeRow[];
+  unisex?: SizeRow[];
 }
 
-export type Brand = 'Puma' | 'Adidas';
+export type Brand = 'Puma' | 'Adidas' | 'Unisex';
 
-export type SizeCategory = 'men' | 'women' | 'kids' | 'all';
+export type SizeCategory = 'men' | 'women' | 'kids' | 'unisex' | 'all';
