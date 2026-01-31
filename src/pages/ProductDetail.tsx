@@ -4,6 +4,7 @@ import { useState } from 'react';
 import products from '../data/products.json';
 import SizeGuideModal from '../components/SizeGuideModal';
 import type { SizeCategory } from '../data/sizeguides';
+import { useFavorites } from '../context/FavoritesContext';
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -11,8 +12,16 @@ export default function ProductDetail() {
   const [selectedSize, setSelectedSize] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showSizeGuide, setShowSizeGuide] = useState(false);
+  const { toggleFavorite, isFavorite } = useFavorites();
 
   const product = products.find((p) => p.id === Number(id));
+  const isProductFavorite = product ? isFavorite(product.id) : false;
+
+  const handleFavoriteClick = () => {
+    if (product) {
+      toggleFavorite(product.id);
+    }
+  };
 
   // Determinar la categoría de talla basándose en el nombre del producto
   const getSizeCategory = (): SizeCategory => {
@@ -187,9 +196,17 @@ export default function ProductDetail() {
                 <ShoppingCart className="w-6 h-6" />
                 {selectedSize ? 'Añadir al carrito' : 'Selecciona una talla'}
               </button>
-              <button className="w-full py-4 rounded-xl font-bold text-lg border-2 border-gray-300 text-gray-900 hover:bg-gray-50 transition-all flex items-center justify-center gap-3">
-                <Heart className="w-6 h-6" />
-                Añadir a favoritos
+              <button className={`
+                w-full py-4 rounded-xl font-bold text-lg border-2 transition-all flex items-center justify-center gap-3
+                ${isProductFavorite 
+                  ? 'border-red-500 bg-red-50 text-red-600 hover:bg-red-100' 
+                  : 'border-gray-300 text-gray-900 hover:bg-gray-50'
+                }
+              `}
+              onClick={handleFavoriteClick}
+              >
+                <Heart className={`w-6 h-6 ${isProductFavorite ? 'fill-red-600' : ''}`} />
+                {isProductFavorite ? 'Quitar de favoritos' : 'Añadir a favoritos'}
               </button>
             </div>
 

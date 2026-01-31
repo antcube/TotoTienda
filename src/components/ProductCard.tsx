@@ -1,5 +1,6 @@
 import { ShoppingCart, Heart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useFavorites } from '../context/FavoritesContext';
 
 interface ProductCardProps {
   id: number;
@@ -19,6 +20,13 @@ export default function ProductCard({
   isNew,
 }: ProductCardProps) {
   const navigate = useNavigate();
+  const { toggleFavorite, isFavorite } = useFavorites();
+  const isProductFavorite = isFavorite(id);
+
+  const handleFavoriteClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    toggleFavorite(id);
+  };
 
   return (
     <div 
@@ -35,8 +43,17 @@ export default function ProductCard({
       )}
 
       {/* Favorite Button */}
-      <button className="absolute top-4 right-4 z-10 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gray-100">
-        <Heart className="w-5 h-5 text-gray-700" />
+      <button 
+        onClick={handleFavoriteClick}
+        className={`absolute top-4 right-4 z-10 p-2 bg-white rounded-full shadow-md transition-all hover:scale-110 ${
+          isProductFavorite ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+        }`}
+      >
+        <Heart 
+          className={`w-5 h-5 transition-colors ${
+            isProductFavorite ? 'fill-red-500 text-red-500' : 'text-gray-700'
+          }`} 
+        />
       </button>
 
       {/* Image */}

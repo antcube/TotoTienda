@@ -19,20 +19,21 @@
   },
   {
     "id": 2,
-    "name": "Urban Street Classic",
-    "category": "Lifestyle",
-    "price": 89.99,
-    "brand": "Adidas",
+    "name": "Zapatillas de training PWR NITRO™ SQD para mujer",
+    "category": "Training",
+    "price": 279.20,
+    "brand": "Puma",
     "images": [
-      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=500&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=500&h=500&fit=crop"
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/310477/19/sv01/fnd/PER/fmt/png/Zapatillas-de-training-PWR-NITRO%E2%84%A2-SQD-para-mujer",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_600,h_600/global/310477/19/bv/fnd/PER/fmt/png/Zapatillas-de-training-PWR-NITRO%E2%84%A2-SQD-para-mujer",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/310477/19/sv04/fnd/PER/fmt/png/Zapatillas-de-training-PWR-NITRO%E2%84%A2-SQD-para-mujer",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_600,h_600/global/310477/19/fv/fnd/PER/fmt/png/Zapatillas-de-training-PWR-NITRO%E2%84%A2-SQD-para-mujer"
     ],
-    "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=500&fit=crop",
-    "sizes": [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11],
-    "isNew": false,
+    "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/310477/19/sv01/fnd/PER/fmt/png/Zapatillas-de-training-PWR-NITRO%E2%84%A2-SQD-para-mujer",
+    "sizes": [5.5, 6, 6.5, 7, 7.5, 8],
+    "isNew": true,
     "isFeatured": true,
-    "description": "Estilo urbano clásico para el día a día"
+    "description": "Presentamos tus nuevas zapatillas favoritas de entrenamiento: las PWR Hybrid TR. Son la nueva innovación en calzado y están fabricadas con PUMAGRIP, para una mejor tracción, y ProFoam, para una comodidad inmejorable durante largas sesiones de ejercicios. Empieza tu próximo entrenamiento de la mejor manera con las PWR Hybrid TR."
   },
   {
     "id": 3,
