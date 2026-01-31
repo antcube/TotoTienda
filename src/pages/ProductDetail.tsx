@@ -5,6 +5,8 @@ import products from '../data/products.json';
 import SizeGuideModal from '../components/SizeGuideModal';
 import type { SizeCategory } from '../data/sizeguides';
 import { useFavorites } from '../context/FavoritesContext';
+import { useCart } from '../context/CartContext';
+import { useToast } from '../context/ToastContext';
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -13,6 +15,8 @@ export default function ProductDetail() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showSizeGuide, setShowSizeGuide] = useState(false);
   const { toggleFavorite, isFavorite } = useFavorites();
+  const { addToCart } = useCart();
+  const { showToast } = useToast();
 
   const product = products.find((p) => p.id === Number(id));
   const isProductFavorite = product ? isFavorite(product.id) : false;
@@ -20,6 +24,20 @@ export default function ProductDetail() {
   const handleFavoriteClick = () => {
     if (product) {
       toggleFavorite(product.id);
+    }
+  };
+
+  const handleAddToCart = () => {
+    if (product && selectedSize) {
+      addToCart({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        size: selectedSize,
+        category: product.category,
+      });
+      showToast(`${product.name} (Talla ${selectedSize}) añadido al carrito`);
     }
   };
 
@@ -184,6 +202,7 @@ export default function ProductDetail() {
             <div className="space-y-3 pt-4">
               <button
                 disabled={!selectedSize}
+                onClick={handleAddToCart}
                 className={`
                   w-full py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 transition-all
                   ${

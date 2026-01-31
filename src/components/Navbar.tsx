@@ -2,11 +2,13 @@ import { ShoppingCart, Search, Menu, User, Heart } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFavorites } from '../context/FavoritesContext';
+import { useCart } from '../context/CartContext';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const { favoritesCount } = useFavorites();
+  const { totalItems } = useCart();
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -74,11 +76,16 @@ export default function Navbar() {
             </button>
 
             {/* Cart Icon */}
-            <button className="relative p-2 hover:bg-gray-100 rounded-full transition">
+            <button 
+              onClick={() => navigate('/cart')}
+              className="relative p-2 hover:bg-gray-100 rounded-full transition"
+            >
               <ShoppingCart className="w-6 h-6 text-gray-700" />
-              <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                0
-              </span>
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold">
+                  {totalItems}
+                </span>
+              )}
             </button>
 
             {/* Mobile Menu Button */}

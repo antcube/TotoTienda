@@ -1,6 +1,9 @@
 import { ShoppingCart, Heart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useFavorites } from '../context/FavoritesContext';
+import { useCart } from '../context/CartContext';
+import { useToast } from '../context/ToastContext';
+import products from '../data/products.json';
 
 interface ProductCardProps {
   id: number;
@@ -21,11 +24,30 @@ export default function ProductCard({
 }: ProductCardProps) {
   const navigate = useNavigate();
   const { toggleFavorite, isFavorite } = useFavorites();
+  const { addToCart } = useCart();
+  const { showToast } = useToast();
   const isProductFavorite = isFavorite(id);
 
   const handleFavoriteClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     toggleFavorite(id);
+  };
+
+  const handleQuickAdd = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const product = products.find((p) => p.id === id);
+    if (product && product.sizes.length > 0) {
+      // Agregar con la primera talla disponible
+      addToCart({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        size: product.sizes[0],
+        category: product.category,
+      });
+      showToast(`${product.name} añadido al carrito`);
+    }
   };
 
   return (
@@ -65,7 +87,10 @@ export default function ProductCard({
         />
         
         {/* Quick Add Button */}
-        <button className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black text-white px-6 py-2.5 rounded-full font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-gray-800 flex items-center gap-2 translate-y-4 group-hover:translate-y-0">
+        <button 
+          onClick={handleQuickAdd}
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black text-white px-6 py-2.5 rounded-full font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-gray-800 flex items-center gap-2 translate-y-4 group-hover:translate-y-0"
+        >
           <ShoppingCart className="w-4 h-4" />
           Añadir al carrito
         </button>
