@@ -384,17 +384,57 @@
     "price": 195,
     "brand": "Adidas",
     "images": [
-      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/f6a93a9a403d40c59292d11dc5588a52_9366/Zapatillas_Park_St_2.0_Blanco_JR9525_01_00_standard.jpg",
+      "https://assets.adidas.com/images/w_600,f_auto,q_auto/daa7bfc056444689aedbf9489addd7d8_9366/Zapatillas_Park_St_2.0_JR9525_00_plp_standard.jpg",
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/2334eb43836741efbc9b80b2b7d812b4_9366/Zapatillas_Park_St_2.0_Blanco_JR9525_02_standard_hover.jpg",
-      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/1f3f3f2f2f4e48b1b4f6e0f3c5e8b6f7_9366/Zapatillas_Park_St_2.0_Blanco_JR9525_03_standard.jpg",
-      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/8e4f4c6e5d4b4f2e9c3b2a1f0e6d5c4b_9366/Zapatillas_Park_St_2.0_Blanco_JR9525_04_standard.jpg"
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/7babfc013b414ed1b3c8893f9c6efc07_9366/Zapatillas_Park_St_2.0_Blanco_JR9525_04_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/78468fb515364d4da5b65a974fb79622_9366/Zapatillas_Park_St_2.0_Blanco_JR9525_42_detail.jpg"
     ],
-    "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/f6a93a9a403d40c59292d11dc5588a52_9366/Zapatillas_Park_St_2.0_Blanco_JR9525_01_00_standard.jpg",
+    "image": "https://assets.adidas.com/images/w_600,f_auto,q_auto/daa7bfc056444689aedbf9489addd7d8_9366/Zapatillas_Park_St_2.0_JR9525_00_plp_standard.jpg",
     "sizes": [
       9
     ],
     "isNew": true,
     "isFeatured": true,
     "description": "Preparadas para cualquier ocasión, estas zapatillas adidas combinan un diseño limpio y contemporáneo con detalles de inspiración retro. Las capas de gamuza y el logo en el ojal hacen un guiño al legado. La suela de caucho ofrece una tracción que se agarra a la acera en la actualidad."
+  },
+  {
+    "id": "IH2930",
+    "name": "Zapatillas de Trail Running Tracefinder",
+    "category": "Outdoor",
+    "gender": "Hombre",
+    "price": 180,
+    "brand": "Adidas",
+    "images": [
+      "https://assets.adidas.com/images/w_600,f_auto,q_auto/1c33425ad62747028e81216c5af99341_9366/Zapatillas_de_Trail_Running_Tracefinder_IH2930_HM1.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/96409f89f8504cf0830ed1f72c50a2be_9366/Zapatillas_de_Trail_Running_Tracefinder_Negro_IH2930_HM4.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/65f19653893c4ae6b7f591280f147de5_9366/Zapatillas_de_Trail_Running_Tracefinder_Negro_IH2930_HM9.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/71a852c1252c40818d4334797095ac23_9366/Zapatillas_de_Trail_Running_Tracefinder_Negro_IH2930_HM7.jpg"
+    ],
+    "image": "https://assets.adidas.com/images/w_600,f_auto,q_auto/1c33425ad62747028e81216c5af99341_9366/Zapatillas_de_Trail_Running_Tracefinder_IH2930_HM1.jpg",
+    "sizes": [
+      9
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "description": "Prepárate para explorar el mundo. Ya sea que prefieras correr o caminar, estas zapatillas de trail running adidas Terrex brindan soporte a tu esfuerzo con la combinación ideal entre amortiguación, comodidad y transpirabilidad. El exterior reforzado ofrece durabilidad y soporte para extender tu rango en los senderos. La suela de caucho Traxion de gran agarre con taches en la suela te ofrece una pisada segura en todo tipo de superficie."
+  },
+  {
+    "id": "JQ9959",
+    "name": "Zapatillas de Senderismo Terrex Anylander Corte Medio",
+    "category": "Outdoor",
+    "gender": "Hombre",
+    "price": 240,
+    "brand": "Adidas",
+    "images": [
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/02131f5173bc4767bcdfe04f36fc7c34_9366/Zapatillas_de_Senderismo_Terrex_Anylander_Corte_Medio_Marron_JQ9959_HM1.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/daff476744784841bb4e0e208dbaf146_9366/Zapatillas_de_Senderismo_Terrex_Anylander_Corte_Medio_Marron_JQ9959_HM5.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/5ab6687b6b94400c8544cbc7ccec3206_9366/Zapatillas_de_Senderismo_Terrex_Anylander_Corte_Medio_Marron_JQ9959_HM8.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/7cdb7802d71a424da8f09b778ca0d970_9366/Zapatillas_de_Senderismo_Terrex_Anylander_Corte_Medio_Marron_JQ9959_HM10.jpg"
+    ],
+    "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/02131f5173bc4767bcdfe04f36fc7c34_9366/Zapatillas_de_Senderismo_Terrex_Anylander_Corte_Medio_Marron_JQ9959_HM1.jpg",
+    "sizes": [9],
+    "isNew": true,
+    "isFeatured": true,
+    "description": "Diseñadas para aventuras de todos los niveles, estas zapatillas de senderismo adidas Terrex extienden tu rango con tracción y soporte seguros en varios tipos de terreno. La mediasuela liviana de EVA le imprime comodidad a cada paso, mientras que el diseño de corte medio sujeta tus tobillos y te protege de rocas y escombros en el camino. La suela Traxion ranurada se adhiere en todas las direcciones para que puedas atravesar caminos rocosos y senderos irregulares con facilidad."
   }
 ]
