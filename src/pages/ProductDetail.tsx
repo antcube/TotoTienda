@@ -39,6 +39,15 @@ export default function ProductDetail() {
   };
 
   // Determinar la categoría de talla basándose en el nombre del producto
+  // Determina si las tallas son peruanas (PE) o estadounidenses (US)
+  const isPeruvianSizing = (): boolean => {
+    if (!product || product.sizes.length === 0) return false;
+    // Las tallas peruanas son típicamente >= 30 (ej: 35, 36, 37, 38, 39, 40)
+    // Las tallas US son típicamente < 20 (ej: 5.5, 6, 7, 8, 9, 10)
+    return product.sizes.some(size => size >= 30);
+  };
+
+  // Determinar la categoría de talla basándose en el nombre del producto
   const getSizeCategory = (): SizeCategory => {
     if (!product) return 'all';
     
@@ -172,18 +181,20 @@ export default function ProductDetail() {
 
             {/* Size Selector */}
             <div>
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">
-                  Selecciona tu talla (US)
-                </h3>
-                <button
-                  onClick={() => setShowSizeGuide(true)}
-                  className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-sm transition"
-                >
-                  <Ruler className="w-4 h-4" />
-                  Guía de tallas
-                </button>
-              </div>
+              {!isPeruvianSizing() && (
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    Selecciona tu talla (US)
+                  </h3>
+                  <button
+                    onClick={() => setShowSizeGuide(true)}
+                    className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-sm transition"
+                  >
+                    <Ruler className="w-4 h-4" />
+                    Guía de tallas
+                  </button>
+                </div>
+              )}
               <div className="grid grid-cols-5 gap-3">
                 {product.sizes.map((size) => (
                   <button
