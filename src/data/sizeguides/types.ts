@@ -8,8 +8,10 @@ export interface SizeRow {
 export interface BrandSizeGuide {
   men?: SizeRow[];
   women?: SizeRow[];
-  kids?: SizeRow[];
+  kids?: SizeRow[] | string; // string for HTML content
   unisex?: SizeRow[];
+  kidsHtmlContent?: string; // HTML content for kids section
+  menHtmlContent?: string; // HTML content for men section
 }
 
 export type Brand = 'Puma' | 'Adidas' | 'Unisex';

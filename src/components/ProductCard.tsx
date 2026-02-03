@@ -10,6 +10,7 @@ interface ProductCardProps {
   image: string;
   isNew?: boolean;
   available?: boolean;
+  brand?: string;
 }
 
 export default function ProductCard({
@@ -20,6 +21,7 @@ export default function ProductCard({
   image,
   isNew,
   available = true,
+  brand,
 }: ProductCardProps) {
   const navigate = useNavigate();
   const { toggleFavorite, isFavorite } = useFavorites();
@@ -58,11 +60,22 @@ export default function ProductCard({
         )}
       </div>
 
+      {/* Brand Badge */}
+      {brand && (
+        <div className="absolute top-4 right-4 z-10">
+          <span className={`text-white text-xs font-bold px-3 py-1 rounded-full ${
+            brand === 'Adidas' ? 'bg-black' : brand === 'Puma' ? 'bg-gray-800' : 'bg-gray-600'
+          }`}>
+            {brand.toUpperCase()}
+          </span>
+        </div>
+      )}
+
       {/* Favorite Button */}
       {available && (
         <button 
           onClick={handleFavoriteClick}
-          className={`absolute top-4 right-4 z-10 p-2 bg-white rounded-full shadow-md transition-all hover:scale-110 ${
+          className={`absolute ${brand ? 'top-14 right-4' : 'top-4 right-4'} z-10 p-2 bg-white rounded-full shadow-md transition-all hover:scale-110 ${
             isProductFavorite ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
           }`}
         >

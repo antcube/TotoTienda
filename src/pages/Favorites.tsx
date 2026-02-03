@@ -90,6 +90,7 @@ export default function Favorites() {
               price={product.price}
               image={product.image}
               isNew={product.isNew}
+              brand={product.brand}
             />
           ))}
         </div>

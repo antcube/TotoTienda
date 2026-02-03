@@ -14,3 +14,196 @@
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
 }
+/* Estilos para la guía de tallas de Adidas */
+._section_ltzws_1 {
+  margin-bottom: 2rem;
+}
+
+._size-chart-title_1n3aa_7 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+._size-chart__statement_16x0q_7 {
+  margin-bottom: 1.5rem;
+}
+
+._size-chart__statement-title_16x0q_15 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+}
+
+._size-chart__statement-text_16x0q_30 {
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+._tableContainer_1r77c_67 {
+  overflow-x: auto;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+._tableContainer_1r77c_67 table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  min-width: 600px;
+}
+
+._tableContainer_1r77c_67 thead {
+  background-color: #f7fafc;
+}
+
+._tableContainer_1r77c_67 th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #2d3748;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+._tableContainer_1r77c_67 td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+._tableContainer_1r77c_67 tbody tr:hover {
+  background-color: #f7fafc;
+}
+
+._visuallyHidden_1r77c_143 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+._legend_1lgmj_1 {
+  font-size: 0.875rem;
+  color: #718096;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+._tabList_1cjwi_67 {
+  margin-bottom: 1rem;
+}
+
+.gl-tab__tab-list {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+._tabItem_1cjwi_80 {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: #718096;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+}
+
+._tabItem_1cjwi_80:hover {
+  color: #2d3748;
+}
+
+.gl-tab__item--is-active {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+._tabPanel_1cjwi_137 {
+  display: block;
+}
+
+._tabPanel_1cjwi_137.is-hidden {
+  display: none;
+}
+
+._how-to-measure_158vu_61 {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+._content-wrapper_158vu_61 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  ._content-wrapper_158vu_61 {
+    grid-template-columns: 1fr;
+  }
+}
+
+._image-container_158vu_72 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+._image-container_158vu_72 img {
+  max-width: 100%;
+  height: auto;
+}
+
+._how-to-measure--bullets_158vu_93 p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+._how-to-measure--bullets_158vu_93 strong {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1.5rem;
+  margin-right: 0.5rem;
+  font-size: 0.875rem;
+}
+
+._anchor_18425_7 {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 2rem;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+._anchor_18425_7:hover {
+  text-decoration: underline;
+}
+
+._back-to-top__icon_18425_21 {
+  margin-right: 0.5rem;
+}
+
+.gl-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}

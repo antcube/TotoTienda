@@ -55,6 +55,15 @@ export default function ProductDetail() {
     if (product.gender === 'Unisex') {
       return 'unisex';
     }
+    if (product.gender === 'Hombre') {
+      return 'men';
+    }
+    if (product.gender === 'Mujer') {
+      return 'women';
+    }
+    if (product.gender === 'Niño' || product.gender === 'Niña') {
+      return 'kids';
+    }
     
     const name = product.name.toLowerCase();
     if (name.includes('unisex')) {
