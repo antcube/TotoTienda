@@ -44,12 +44,12 @@ export default function SizeGuideModal({ isOpen, onClose, brand, category = 'all
           {hasCustomKidsContent ? (
             <div 
               className="prose prose-sm max-w-none"
-              dangerouslySetInnerHTML={{ __html: sizeData.kidsHtmlContent }}
+              dangerouslySetInnerHTML={{ __html: sizeData.kidsHtmlContent || '' }}
             />
           ) : hasCustomMenContent ? (
             <div 
               className="prose prose-sm max-w-none"
-              dangerouslySetInnerHTML={{ __html: sizeData.menHtmlContent }}
+              dangerouslySetInnerHTML={{ __html: sizeData.menHtmlContent || '' }}
             />
           ) : (
             <>
@@ -78,20 +78,20 @@ export default function SizeGuideModal({ isOpen, onClose, brand, category = 'all
               )}
 
               {/* Niños */}
-              {showKids && sizeData.kids && (
+              {showKids && sizeData.kids && Array.isArray(sizeData.kids) && (
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">Zapatillas para niños</h3>
                   
                   {/* Bebé (0-4 años) */}
                   <SizeTable 
-                    sizes={sizeData.kids.filter(size => size.category === 'baby')}
+                    sizes={sizeData.kids.filter((size) => size.category === 'baby')}
                     title="Zapatillas para bebé (0-4 años)"
                   />
                   
                   {/* Niño (5-7 años) */}
                   <div className="mt-6">
                     <SizeTable 
-                      sizes={sizeData.kids.filter(size => size.category === 'child')}
+                      sizes={sizeData.kids.filter((size) => size.category === 'child')}
                       title="Zapatillas para niño (5-7 años)"
                     />
                   </div>
