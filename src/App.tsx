@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import Favorites from './pages/Favorites';
@@ -10,6 +11,7 @@ function App() {
     return (
         <FavoritesProvider>
             <Router>
+                <ScrollToTop />
                 <div className="min-h-screen bg-white">
                     <Navbar />
                     <Routes>

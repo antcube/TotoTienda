@@ -436,5 +436,26 @@
     "isNew": true,
     "isFeatured": true,
     "description": "Diseñadas para aventuras de todos los niveles, estas zapatillas de senderismo adidas Terrex extienden tu rango con tracción y soporte seguros en varios tipos de terreno. La mediasuela liviana de EVA le imprime comodidad a cada paso, mientras que el diseño de corte medio sujeta tus tobillos y te protege de rocas y escombros en el camino. La suela Traxion ranurada se adhiere en todas las direcciones para que puedas atravesar caminos rocosos y senderos irregulares con facilidad."
+  },
+  {
+    "id": "883548995",
+    "name": "Zapatillas Diadora W Bamtela",
+    "category": "Urbanas",
+    "gender": "Mujer",
+    "price": 80,
+    "brand": "Diadora",
+    "images": [
+      "https://media.falabella.com/falabellaPE/883548995_1/w=1200,h=1200,fit=pad",
+      "https://media.falabella.com/falabellaPE/883548995_2/w=1200,h=1200,fit=pad",
+      "https://media.falabella.com/falabellaPE/883548995_3/w=1200,h=1200,fit=pad",
+      "https://media.falabella.com/falabellaPE/883548995_5/w=1200,h=1200,fit=pad"
+    ],
+    "image": "https://media.falabella.com/falabellaPE/883548995_1/w=1200,h=1200,fit=pad",
+    "sizes": [
+      35, 39.5
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "description": "Zapatillas Urbanas Mujer Diadora W Bamtela esenciales para el día a día, con un diseño clásico y detalles modernos que las hacen versátiles y cómodas para cualquier ocasión."
   }
 ]
