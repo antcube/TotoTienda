@@ -9,6 +9,7 @@ interface ProductCardProps {
   price: number;
   image: string;
   isNew?: boolean;
+  available?: boolean;
 }
 
 export default function ProductCard({
@@ -18,6 +19,7 @@ export default function ProductCard({
   price,
   image,
   isNew,
+  available = true,
 }: ProductCardProps) {
   const navigate = useNavigate();
   const { toggleFavorite, isFavorite } = useFavorites();
@@ -43,44 +45,55 @@ export default function ProductCard({
       className="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
     >
       {/* Labels */}
-      {isNew && (
-        <div className="absolute top-4 left-4 z-10">
+      <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
+        {!available && (
+          <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+            AGOTADO
+          </span>
+        )}
+        {isNew && available && (
           <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
             NUEVO
           </span>
-        </div>
-      )}
+        )}
+      </div>
 
       {/* Favorite Button */}
-      <button 
-        onClick={handleFavoriteClick}
-        className={`absolute top-4 right-4 z-10 p-2 bg-white rounded-full shadow-md transition-all hover:scale-110 ${
-          isProductFavorite ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-        }`}
-      >
-        <Heart 
-          className={`w-5 h-5 transition-colors ${
-            isProductFavorite ? 'fill-red-500 text-red-500' : 'text-gray-700'
-          }`} 
-        />
-      </button>
+      {available && (
+        <button 
+          onClick={handleFavoriteClick}
+          className={`absolute top-4 right-4 z-10 p-2 bg-white rounded-full shadow-md transition-all hover:scale-110 ${
+            isProductFavorite ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+          }`}
+        >
+          <Heart 
+            className={`w-5 h-5 transition-colors ${
+              isProductFavorite ? 'fill-red-500 text-red-500' : 'text-gray-700'
+            }`} 
+          />
+        </button>
+      )}
 
       {/* Image */}
       <div className="relative aspect-square bg-gray-100 overflow-hidden">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ${
+            !available ? 'opacity-60 grayscale-[30%]' : ''
+          }`}
         />
         
         {/* WhatsApp Button */}
-        <button 
-          onClick={handleWhatsAppClick}
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-green-600 text-white px-6 py-2.5 rounded-full font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-green-700 flex items-center gap-2 translate-y-4 group-hover:translate-y-0"
-        >
-          <MessageCircle className="w-4 h-4" />
-          Consultar por WhatsApp
-        </button>
+        {available && (
+          <button 
+            onClick={handleWhatsAppClick}
+            className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white px-6 py-2.5 rounded-full font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center gap-2 translate-y-4 group-hover:translate-y-0 bg-green-600 hover:bg-green-700"
+          >
+            <MessageCircle className="w-4 h-4" />
+            Consultar por WhatsApp
+          </button>
+        )}
       </div>
 
       {/* Content */}

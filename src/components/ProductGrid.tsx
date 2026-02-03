@@ -16,6 +16,7 @@ interface Product {
   sizes: number[];
   isNew?: boolean;
   isFeatured?: boolean;
+  available?: boolean;
   description: string;
 }
 
@@ -51,6 +52,13 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
 
   // Sort products
   filteredProducts = [...filteredProducts].sort((a, b) => {
+    // Primero: disponibles antes que agotados
+    const aAvailable = a.available !== false;
+    const bAvailable = b.available !== false;
+    if (aAvailable && !bAvailable) return -1;
+    if (!aAvailable && bAvailable) return 1;
+    
+    // Luego aplicar el ordenamiento seleccionado
     if (sortBy === 'price-low') return a.price - b.price;
     if (sortBy === 'price-high') return b.price - a.price;
     if (sortBy === 'name') return a.name.localeCompare(b.name);

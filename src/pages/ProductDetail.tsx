@@ -118,15 +118,24 @@ export default function ProductDetail() {
           <div className="space-y-4">
             {/* Main Image */}
             <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg aspect-square">
-              {product.isNew && (
-                <span className="absolute top-6 left-6 z-10 bg-blue-600 text-white text-sm font-bold px-4 py-2 rounded-full">
-                  NUEVO
-                </span>
-              )}
+              <div className="absolute top-6 left-6 z-10 flex flex-col gap-2">
+                {!product.available && (
+                  <span className="bg-red-600 text-white text-sm font-bold px-4 py-2 rounded-full">
+                    AGOTADO
+                  </span>
+                )}
+                {product.isNew && product.available && (
+                  <span className="bg-blue-600 text-white text-sm font-bold px-4 py-2 rounded-full">
+                    NUEVO
+                  </span>
+                )}
+              </div>
               <img
                 src={product.images[currentImageIndex]}
                 alt={`${product.name} - imagen ${currentImageIndex + 1}`}
-                className="w-full h-full object-cover transition-opacity duration-300"
+                className={`w-full h-full object-cover transition-opacity duration-300 ${
+                  !product.available ? 'opacity-70' : ''
+                }`}
               />
               
               {/* Image Counter */}
@@ -217,25 +226,35 @@ export default function ProductDetail() {
 
             {/* Action Buttons */}
             <div className="space-y-3 pt-4">
-              <button
-                onClick={handleWhatsAppConsult}
-                className="w-full bg-green-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition-all flex items-center justify-center gap-3"
-              >
-                <MessageCircle className="w-6 h-6" />
-                {selectedSize ? `Consultar disponibilidad (Talla ${selectedSize})` : 'Consultar por WhatsApp'}
-              </button>
-              <button className={`
-                w-full py-4 rounded-xl font-bold text-lg border-2 transition-all flex items-center justify-center gap-3
-                ${isProductFavorite 
-                  ? 'border-red-500 bg-red-50 text-red-600 hover:bg-red-100' 
-                  : 'border-gray-300 text-gray-900 hover:bg-gray-50'
-                }
-              `}
-              onClick={handleFavoriteClick}
-              >
-                <Heart className={`w-6 h-6 ${isProductFavorite ? 'fill-red-600' : ''}`} />
-                {isProductFavorite ? 'Quitar de favoritos' : 'Añadir a favoritos'}
-              </button>
+              {product.available && (
+                <button
+                  onClick={handleWhatsAppConsult}
+                  className="w-full text-white py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700"
+                >
+                  <MessageCircle className="w-6 h-6" />
+                  {selectedSize ? `Consultar disponibilidad (Talla ${selectedSize})` : 'Consultar por WhatsApp'}
+                </button>
+              )}
+              {!product.available && (
+                <div className="w-full bg-gray-100 text-gray-500 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 cursor-not-allowed">
+                  <MessageCircle className="w-6 h-6" />
+                  Producto agotado
+                </div>
+              )}
+              {product.available && (
+                <button className={`
+                  w-full py-4 rounded-xl font-bold text-lg border-2 transition-all flex items-center justify-center gap-3
+                  ${isProductFavorite 
+                    ? 'border-red-500 bg-red-50 text-red-600 hover:bg-red-100' 
+                    : 'border-gray-300 text-gray-900 hover:bg-gray-50'
+                  }
+                `}
+                onClick={handleFavoriteClick}
+                >
+                  <Heart className={`w-6 h-6 ${isProductFavorite ? 'fill-red-600' : ''}`} />
+                  {isProductFavorite ? 'Quitar de favoritos' : 'Añadir a favoritos'}
+                </button>
+              )}
             </div>
 
             {/* Features */}
