@@ -39,7 +39,7 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
   // Cambiar categorías según el género seleccionado
   const categories = genderFilter === 'Niños' 
     ? ['Todos', 'Deportivas', 'Urbanas']
-    : ['Todos', 'Running', 'Training', 'Outdoor', 'Urbanas'];
+    : ['Todos', 'Deportivas', 'Outdoor', 'Urbanas'];
 
   // Filter by gender first
   // Products with gender "Unisex" should appear in both Hombre and Mujer categories (not in Niños)
