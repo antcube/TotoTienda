@@ -1,4 +1,5 @@
 import { Facebook, Instagram, MessageCircle, MapPin, Phone, Mail, Heart, Clock } from 'lucide-react';
+import logo from '../assets/ZapaTopLogo.png';
 
 export default function Footer() {
   const handleWhatsAppClick = () => {
@@ -15,9 +16,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-white text-2xl font-bold mb-4">
-              Zapa<span className="text-blue-500">Top</span>
-            </h3>
+            <div className="bg-white rounded-lg inline-block mb-4">
+              <img 
+                src={logo} 
+                alt="ZapaTop" 
+                className="h-32 w-32 object-contain"
+              />
+            </div>
             <p className="text-sm mb-6 leading-relaxed">
               Tu catálogo de confianza para las mejores zapatillas deportivas.
               Calidad, comodidad y estilo en cada modelo.

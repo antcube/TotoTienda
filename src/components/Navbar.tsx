@@ -2,6 +2,7 @@ import { Search, Menu, Heart } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useFavorites } from '../context/FavoritesContext';
+import logo from '../assets/ZapaTopLogo.png';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,13 +16,15 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-2">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="shrink-0 flex items-center cursor-pointer" onClick={() => navigate('/')}>
-            <h1 className="text-2xl font-bold text-gray-900">
-              Zapa<span className="text-blue-600">Top</span>
-            </h1>
+            <img 
+              src={logo} 
+              alt="ZapaTop" 
+              className="h-20 md:h-24 w-auto object-contain"
+            />
           </div>
 
           {/* Desktop Menu */}
