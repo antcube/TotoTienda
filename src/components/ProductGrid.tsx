@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import ProductCard from './ProductCard';
 import productsData from '../data/products.json';
-import { SlidersHorizontal, X, Loader2 } from 'lucide-react';
+import { SlidersHorizontal, X, Loader2, Filter } from 'lucide-react';
 
 interface Product {
   id: number | string;
@@ -30,6 +30,7 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
   const [selectedBrand, setSelectedBrand] = useState<string>('Todas');
   const [sortBy, setSortBy] = useState<string>('featured');
   const [displayedCount, setDisplayedCount] = useState<number>(12);
+  const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const { ref, inView } = useInView({
@@ -104,6 +105,18 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
   const displayedProducts = filteredProducts.slice(0, displayedCount);
   const hasMore = displayedCount < filteredProducts.length;
 
+  // Prevent body scroll when filter drawer is open
+  useEffect(() => {
+    if (isFilterOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isFilterOpen]);
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -115,19 +128,22 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Encuentra las zapatillas perfectas para tu estilo y actividad
           </p>
-          {genderFilter && (
+          {genderFilter && (selectedCategory !== 'Todos' || selectedBrand !== 'Todas') && (
             <button
-              onClick={() => navigate('/')}
+              onClick={() => {
+                setSelectedCategory('Todos');
+                setSelectedBrand('Todas');
+              }}
               className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full font-medium transition"
             >
               <X className="w-4 h-4" />
-              Ver todos los productos
+              Ver todos de {genderFilter}
             </button>
           )}
         </div>
 
-        {/* Filters */}
-        <div className="mb-8 space-y-4">
+        {/* Filters - Desktop */}
+        <div className="mb-8 space-y-4 hidden md:block">
           {/* Categories and Brands Row */}
           <div className="flex flex-col lg:flex-row gap-4 justify-between items-start lg:items-center">
             {/* Categories */}
@@ -190,6 +206,126 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
             </div>
           </div>
         </div>
+
+        {/* Filter Button - Mobile */}
+        <div className="mb-6 md:hidden flex items-center gap-3">
+          <button
+            onClick={() => setIsFilterOpen(true)}
+            className="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-md hover:bg-blue-700 transition"
+          >
+            <Filter className="w-5 h-5" />
+            Filtros
+            {(selectedCategory !== 'Todos' || selectedBrand !== 'Todas') && (
+              <span className="bg-white text-blue-600 text-xs font-bold px-2 py-0.5 rounded-full">
+                {(selectedCategory !== 'Todos' ? 1 : 0) + (selectedBrand !== 'Todas' ? 1 : 0)}
+              </span>
+            )}
+          </button>
+          
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            className="bg-white border border-gray-300 rounded-lg px-4 py-3 font-medium text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+          >
+            <option value="featured">Destacados</option>
+            <option value="price-low">$ Menor</option>
+            <option value="price-high">$ Mayor</option>
+            <option value="name">A-Z</option>
+          </select>
+        </div>
+
+        {/* Filter Drawer - Mobile */}
+        {isFilterOpen && (
+          <>
+            {/* Backdrop */}
+            <div 
+              className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+              onClick={() => setIsFilterOpen(false)}
+            />
+            
+            {/* Drawer */}
+            <div className="fixed inset-x-0 bottom-0 bg-white rounded-t-3xl shadow-2xl z-50 md:hidden max-h-[80vh] overflow-y-auto">
+              {/* Header */}
+              <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 rounded-t-3xl">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl font-bold text-gray-900">Filtros</h3>
+                  <button
+                    onClick={() => setIsFilterOpen(false)}
+                    className="p-2 hover:bg-gray-100 rounded-full transition"
+                  >
+                    <X className="w-6 h-6 text-gray-600" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="px-6 py-6 space-y-6">
+                {/* Categories */}
+                <div>
+                  <label className="text-sm font-bold text-gray-900 mb-3 block">Categorías</label>
+                  <div className="flex flex-wrap gap-2">
+                    {categories.map((category) => (
+                      <button
+                        key={category}
+                        onClick={() => setSelectedCategory(category)}
+                        className={`px-5 py-2.5 rounded-full font-medium transition-all ${
+                          selectedCategory === category
+                            ? 'bg-blue-600 text-white shadow-lg'
+                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        }`}
+                      >
+                        {category}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Brands */}
+                <div>
+                  <label className="text-sm font-bold text-gray-900 mb-3 block">Marcas</label>
+                  <div className="flex flex-wrap gap-2">
+                    {brands.map((brand) => (
+                      <button
+                        key={brand}
+                        onClick={() => setSelectedBrand(brand)}
+                        className={`px-5 py-2.5 rounded-full font-medium transition-all ${
+                          selectedBrand === brand
+                            ? brand === 'Adidas' 
+                              ? 'bg-black text-white shadow-lg'
+                              : brand === 'Puma'
+                              ? 'bg-gray-800 text-white shadow-lg'
+                              : 'bg-blue-600 text-white shadow-lg'
+                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        }`}
+                      >
+                        {brand}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Footer */}
+              <div className="sticky bottom-0 bg-white border-t border-gray-200 px-6 py-4 flex gap-3">
+                <button
+                  onClick={() => {
+                    setSelectedCategory('Todos');
+                    setSelectedBrand('Todas');
+                  }}
+                  className="flex-1 bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition"
+                >
+                  Limpiar
+                </button>
+                <button
+                  onClick={() => setIsFilterOpen(false)}
+                  className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition shadow-md"
+                >
+                  Aplicar
+                </button>
+              </div>
+            </div>
+          </>
+        )}
 
         {/* Products Count */}
         <div className="mb-6">
