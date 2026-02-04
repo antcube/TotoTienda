@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
 import ProductCard from './ProductCard';
 import productsData from '../data/products.json';
-import { SlidersHorizontal, X } from 'lucide-react';
+import { SlidersHorizontal, X, Loader2 } from 'lucide-react';
 
 interface Product {
   id: number | string;
@@ -27,7 +28,13 @@ interface ProductGridProps {
 export default function ProductGrid({ genderFilter }: ProductGridProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>('Todos');
   const [sortBy, setSortBy] = useState<string>('featured');
+  const [displayedCount, setDisplayedCount] = useState<number>(12);
   const navigate = useNavigate();
+
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: false,
+  });
 
   // Cambiar categorías según el género seleccionado
   const categories = genderFilter === 'Niños' 
@@ -69,6 +76,25 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
     if (!a.isNew && b.isNew) return 1;
     return 0;
   });
+
+  // Reset displayed count when filters change
+  useEffect(() => {
+    setDisplayedCount(12);
+  }, [genderFilter, selectedCategory, sortBy]);
+
+  // Load more products when scroll trigger is in view
+  useEffect(() => {
+    if (inView && displayedCount < filteredProducts.length) {
+      // Simulate loading delay for better UX
+      const timer = setTimeout(() => {
+        setDisplayedCount((prev) => Math.min(prev + 12, filteredProducts.length));
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [inView, displayedCount, filteredProducts.length]);
+
+  const displayedProducts = filteredProducts.slice(0, displayedCount);
+  const hasMore = displayedCount < filteredProducts.length;
 
   return (
     <section className="py-16 bg-gray-50">
@@ -130,16 +156,34 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
         {/* Products Count */}
         <div className="mb-6">
           <p className="text-gray-600">
-            Mostrando <span className="font-semibold">{filteredProducts.length}</span> productos
+            Mostrando <span className="font-semibold">{displayedCount}</span> de{' '}
+            <span className="font-semibold">{filteredProducts.length}</span> productos
           </p>
         </div>
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredProducts.map((product) => (
+          {displayedProducts.map((product) => (
             <ProductCard key={product.id} {...product} />
           ))}
         </div>
+
+        {/* Loading indicator and scroll trigger */}
+        {hasMore && (
+          <div ref={ref} className="flex justify-center items-center py-12">
+            <div className="flex items-center gap-3 text-blue-600">
+              <Loader2 className="w-6 h-6 animate-spin" />
+              <span className="text-lg font-medium">Cargando más productos...</span>
+            </div>
+          </div>
+        )}
+
+        {/* End message */}
+        {!hasMore && filteredProducts.length > 12 && (
+          <div className="text-center py-12">
+            <p className="text-gray-500 text-lg">Has visto todos los productos disponibles</p>
+          </div>
+        )}
 
         {/* Empty State */}
         {filteredProducts.length === 0 && (
