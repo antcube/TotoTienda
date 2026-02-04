@@ -27,6 +27,7 @@ interface ProductGridProps {
 
 export default function ProductGrid({ genderFilter }: ProductGridProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>('Todos');
+  const [selectedBrand, setSelectedBrand] = useState<string>('Todas');
   const [sortBy, setSortBy] = useState<string>('featured');
   const [displayedCount, setDisplayedCount] = useState<number>(12);
   const navigate = useNavigate();
@@ -40,6 +41,8 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
   const categories = genderFilter === 'Niños' 
     ? ['Todos', 'Deportivas', 'Urbanas']
     : ['Todos', 'Deportivas', 'Outdoor', 'Urbanas'];
+
+  const brands = ['Todas', 'Adidas', 'Puma'];
 
   // Filter by gender first
   // Products with gender "Unisex" should appear in both Hombre and Mujer categories (not in Niños)
@@ -56,6 +59,11 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
   filteredProducts = selectedCategory === 'Todos'
     ? filteredProducts
     : filteredProducts.filter((p) => p.category === selectedCategory);
+
+  // Filter by brand
+  filteredProducts = selectedBrand === 'Todas'
+    ? filteredProducts
+    : filteredProducts.filter((p) => p.brand === selectedBrand);
 
   // Sort products
   filteredProducts = [...filteredProducts].sort((a, b) => {
@@ -80,7 +88,7 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
   // Reset displayed count when filters change
   useEffect(() => {
     setDisplayedCount(12);
-  }, [genderFilter, selectedCategory, sortBy]);
+  }, [genderFilter, selectedCategory, selectedBrand, sortBy]);
 
   // Load more products when scroll trigger is in view
   useEffect(() => {
@@ -119,37 +127,67 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
         </div>
 
         {/* Filters */}
-        <div className="mb-8 flex flex-col lg:flex-row gap-4 justify-between items-start lg:items-center">
-          {/* Categories */}
-          <div className="flex flex-wrap gap-2">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-5 py-2.5 rounded-full font-medium transition-all ${
-                  selectedCategory === category
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
+        <div className="mb-8 space-y-4">
+          {/* Categories and Brands Row */}
+          <div className="flex flex-col lg:flex-row gap-4 justify-between items-start lg:items-center">
+            {/* Categories */}
+            <div className="w-full lg:w-auto">
+              <label className="text-sm font-medium text-gray-700 mb-2 block">Categorías</label>
+              <div className="flex flex-wrap gap-2">
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-5 py-2.5 rounded-full font-medium transition-all ${
+                      selectedCategory === category
+                        ? 'bg-blue-600 text-white shadow-lg'
+                        : 'bg-white text-gray-700 hover:bg-gray-100'
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Sort */}
+            <div className="flex items-center gap-3">
+              <SlidersHorizontal className="w-5 h-5 text-gray-500" />
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="bg-white border border-gray-300 rounded-lg px-4 py-2.5 font-medium text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
               >
-                {category}
-              </button>
-            ))}
+                <option value="featured">Destacados</option>
+                <option value="price-low">Precio: Bajo a Alto</option>
+                <option value="price-high">Precio: Alto a Bajo</option>
+                <option value="name">Nombre A-Z</option>
+              </select>
+            </div>
           </div>
 
-          {/* Sort */}
-          <div className="flex items-center gap-3">
-            <SlidersHorizontal className="w-5 h-5 text-gray-500" />
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              className="bg-white border border-gray-300 rounded-lg px-4 py-2.5 font-medium text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
-            >
-              <option value="featured">Destacados</option>
-              <option value="price-low">Precio: Bajo a Alto</option>
-              <option value="price-high">Precio: Alto a Bajo</option>
-              <option value="name">Nombre A-Z</option>
-            </select>
+          {/* Brands Row */}
+          <div>
+            <label className="text-sm font-medium text-gray-700 mb-2 block">Marcas</label>
+            <div className="flex flex-wrap gap-2">
+              {brands.map((brand) => (
+                <button
+                  key={brand}
+                  onClick={() => setSelectedBrand(brand)}
+                  className={`px-5 py-2.5 rounded-full font-medium transition-all ${
+                    selectedBrand === brand
+                      ? brand === 'Adidas' 
+                        ? 'bg-black text-white shadow-lg'
+                        : brand === 'Puma'
+                        ? 'bg-gray-800 text-white shadow-lg'
+                        : 'bg-blue-600 text-white shadow-lg'
+                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                  }`}
+                >
+                  {brand}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
