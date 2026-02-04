@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import ProductCard from './ProductCard';
 import productsData from '../data/products.json';
@@ -31,7 +30,6 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
   const [sortBy, setSortBy] = useState<string>('featured');
   const [displayedCount, setDisplayedCount] = useState<number>(12);
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
-  const navigate = useNavigate();
 
   const { ref, inView } = useInView({
     threshold: 0.1,
