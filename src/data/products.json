@@ -3129,5 +3129,101 @@
     "isFeatured": true,
     "available": true,
     "description": "Prepárate para explorar el mundo. Ya sea que prefieras correr o caminar, estas zapatillas de trail running adidas Terrex brindan soporte a tu esfuerzo con la combinación ideal entre amortiguación, comodidad y transpirabilidad"
+  },
+  {
+    "id": "KI0917",
+    "name": "Zapatillas Samba XLG",
+    "category": "Urbanas",
+    "gender": "Mujer",
+    "price": 360,
+    "brand": "Adidas",
+    "images": [
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/63d5999801e34bcabb5025e851aa6d03_9366/ZAPATILLAS_SAMBA_XLG_Marron_KI0917_01_00_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/3316a3585d68477a8d809f79ec4e8e7f_9366/ZAPATILLAS_SAMBA_XLG_Marron_KI0917_02_standard_hover.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/cd061d8f194a499fbd94c08b69a7a361_9366/ZAPATILLAS_SAMBA_XLG_Marron_KI0917_03_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/995b2de2f58f4204bc52500c78fdf69d_9366/ZAPATILLAS_SAMBA_XLG_Marron_KI0917_04_standard.jpg"
+    ],
+    "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/63d5999801e34bcabb5025e851aa6d03_9366/ZAPATILLAS_SAMBA_XLG_Marron_KI0917_01_00_standard.jpg",
+    "sizes": [
+      8, 8.5, 9, 9.5
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "available": true,
+    "description": "La herencia se une a la modernidad en las zapatillas Samba XLG de adidas, con una silueta Samba rediseñada que recibe el tratamiento XLG para darle una nueva profundidad, un diseño atrevido y un toque de confianza para las calles modernas.\n\nEl exterior de cuero les aporta un estilo clásico, mientras que los cuartos de nylon balístico añaden textura funcional. La puntera en T de gamuza y los ojales perforados son un guiño al modelo original, complementados con una lengüeta moldeada acolchada y una plantilla de EVA para mayor comodidad.\n\nEl distintivo de marca de las 3 Tiras añade una energía característica y ayudan a consolidar el look de unas zapatillas que lucen con orgullo el espíritu inconfundible de adidas Originals."
+  },
+  {
+    "id": "KJ0996",
+    "name": "Zapatillas Samba OG",
+    "category": "Urbanas",
+    "gender": "Mujer",
+    "price": 330,
+    "brand": "Adidas",
+    "images": [
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c13c4123ac547b88836bce683c3e057_9366/ZAPATILLAS_SAMBA_OG_Blanco_KJ0996_01_00_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/458af32a160d47b1a606413961db5efd_9366/ZAPATILLAS_SAMBA_OG_Blanco_KJ0996_02_standard_hover.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/7a92bd6b5277418b8ce1e90e6153ee69_9366/ZAPATILLAS_SAMBA_OG_Blanco_KJ0996_03_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/90ad1c5b43bd47d496db9ec0c0393b81_9366/ZAPATILLAS_SAMBA_OG_Blanco_KJ0996_04_standard.jpg"
+    ],
+    "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c13c4123ac547b88836bce683c3e057_9366/ZAPATILLAS_SAMBA_OG_Blanco_KJ0996_01_00_standard.jpg",
+    "sizes": [
+      4.5,
+      5,
+      5.5,
+      6,
+      6.5,
+      7,
+      7.5,
+      8,
+      8.5
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "available": true,
+    "description": "Las zapatillas Samba OG dan vida al legado de adidas con un atractivo atemporal. Un auténtico ícono de la cultura futbolística, rediseñado para las calles de hoy, que combina el legado y la energía moderna en un diseño seguro. Están confeccionadas con un exterior de cuero premium para ofrecer elegancia y estilo clásicos. Diseñadas para el uso diario, la suela de caucho duradera aporta un agarre fiable y comodidad."
+  },
+  {
+    "id": "JP6813",
+    "name": "Zapatillas Samba XLG",
+    "category": "Urbanas",
+    "gender": "Mujer",
+    "price": 360,
+    "brand": "Adidas",
+    "images": [
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/6329ae161deb4dc1b3a65d36db7c3b58_9366/ZAPATILLAS_SAMBA_XLG_Verde_JP6813_01_00_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/9812e9ff397b41ef8bd93ae7617da81d_9366/ZAPATILLAS_SAMBA_XLG_Verde_JP6813_02_standard_hover.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/e74aa8c546d743e482bc7cdd93b4a40a_9366/ZAPATILLAS_SAMBA_XLG_Verde_JP6813_03_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/f8af8eba47f84ae6b70c2767cb0e6883_9366/ZAPATILLAS_SAMBA_XLG_Verde_JP6813_04_standard.jpg"
+    ],
+    "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/6329ae161deb4dc1b3a65d36db7c3b58_9366/ZAPATILLAS_SAMBA_XLG_Verde_JP6813_01_00_standard.jpg",
+    "sizes": [
+      5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "available": true,
+    "description": "Entra en un mundo donde el estilo se une al legado con las zapatillas Samba XLG. Estas zapatillas son un guiño a las icónicas adidas Originals, mezclando un diseño clásico con un toque moderno. Confeccionadas con un exterior de cuero y tela, ofrecen una sensación de primera calidad y un aspecto atemporal que destaca entre la multitud. El corte clásico ofrece comodidad, mientras que la suela de caucho proporciona una tracción fiable para tus aventuras cotidianas."
+  },
+  {
+    "id": "JR0929",
+    "name": "Zapatillas Samba XLG",
+    "category": "Urbanas",
+    "gender": "Mujer",
+    "price": 360,
+    "brand": "Adidas",
+    "images": [
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/6329ae161deb4dc1b3a65d36db7c3b58_9366/ZAPATILLAS_SAMBA_XLG_Verde_JR0929_01_00_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/9812e9ff397b41ef8bd93ae7617da81d_9366/ZAPATILLAS_SAMBA_XLG_Verde_JR0929_02_standard_hover.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/e74aa8c546d743e482bc7cdd93b4a40a_9366/ZAPATILLAS_SAMBA_XLG_Verde_JR0929_03_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/f8af8eba47f84ae6b70c2767cb0e6883_9366/ZAPATILLAS_SAMBA_XLG_Verde_JR0929_04_standard.jpg"
+    ],
+    "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/6329ae161deb4dc1b3a65d36db7c3b58_9366/ZAPATILLAS_SAMBA_XLG_Verde_JR0929_01_00_standard.jpg",
+    "sizes": [
+      5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "available": true,
+    "description": "Entra en un mundo donde el estilo se une al legado con las zapatillas Samba XLG. Estas zapatillas son un guiño a las icónicas adidas Originals, mezclando un diseño clásico con un toque moderno. Confeccionadas con un exterior de cuero y tela, ofrecen una sensación de primera calidad y un aspecto atemporal que destaca entre la multitud. El corte clásico ofrece comodidad, mientras que la suela de caucho proporciona una tracción fiable para tus aventuras cotidianas."
   }
 ]
