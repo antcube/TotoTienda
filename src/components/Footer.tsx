@@ -1,5 +1,5 @@
 import { Facebook, Instagram, MessageCircle, MapPin, Phone, Mail, Heart, Clock } from 'lucide-react';
-import logo from '../assets/ZapaTopLogoV2.jpeg';
+import logo from '../assets/ZapaTopLogoV2.jpg';
 
 export default function Footer() {
   const handleWhatsAppClick = () => {
@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <div className="bg-white rounded-lg inline-block mb-4">
+            <div className="bg-white rounded-lg inline-block mb-4 px-6">
               <img 
                 src={logo} 
                 alt="ZapaTop" 
