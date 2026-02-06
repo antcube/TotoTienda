@@ -1,5 +1,5 @@
 import { Facebook, Instagram, MessageCircle, MapPin, Phone, Mail, Heart, Clock } from 'lucide-react';
-import logo from '../assets/ZapaTopLogo.png';
+import logo from '../assets/ZapaTopLogoV2.jpeg';
 
 export default function Footer() {
   const handleWhatsAppClick = () => {

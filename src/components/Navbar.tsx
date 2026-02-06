@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useFavorites } from '../context/FavoritesContext';
 import SearchSidebar from './SearchSidebar';
-import logo from '../assets/ZapaTopLogo.png';
+import logo from '../assets/ZapaTopLogoV2.jpg';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,14 +18,14 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 lg:py-3">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="shrink-0 flex items-center cursor-pointer" onClick={() => navigate('/')}>
+          <div className="shrink-0 flex items-center cursor-pointer h-full py-2" onClick={() => navigate('/')}>
             <img 
               src={logo} 
               alt="ZapaTop" 
-              className="h-20 md:h-24 w-auto object-contain"
+              className="h-16 lg:h-20 w-auto object-contain mix-blend-multiply"
             />
           </div>
 
