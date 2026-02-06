@@ -338,9 +338,83 @@
       35
     ],
     "isNew": true,
-    "isFeatured": true,
+    "isFeatured": false,
     "available": false,
     "description": "Zapatillas Urbanas Mujer Diadora W Bamtela esenciales para el día a día, con un diseño clásico y detalles modernos que las hacen versátiles y cómodas para cualquier ocasión."
+  },
+  {
+    "id": "JQ1526",
+    "name": "Zapatillas Forum2000",
+    "category": "Urbanas",
+    "gender": "Mujer",
+    "price": 350,
+    "brand": "Adidas",
+    "images": [
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/8f14dec40d404d8dae819a7f8c09a349_9366/Zapatillas_Forum2000_Azul_JQ1526_01_00_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/92de4a446260472e8f29fc943a8ea458_9366/Zapatillas_Forum2000_Azul_JQ1526_02_standard_hover.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/1947ada9df7f420b93b1af8395633619_9366/Zapatillas_Forum2000_Azul_JQ1526_03_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/d31cff000f8a4401b45f30bfde04395c_9366/Zapatillas_Forum2000_Azul_JQ1526_04_standard.jpg"
+    ],
+    "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/8f14dec40d404d8dae819a7f8c09a349_9366/Zapatillas_Forum2000_Azul_JQ1526_01_00_standard.jpg",
+    "sizes": [
+      8, 8.5, 9
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "available": true,
+    "description": "Basadas en las icónicas zapatillas de básquet Forum que dominaron las canchas en el pasado, las adidas Forum2000 fusionan la famosa silueta con estilo fresco y energía. El exterior cobra vida con una mezcla de cuero, gamuza y malla, creando una interesante interacción de texturas. Las 3 Tiras extragrandes, los pasadores gruesos y la lengüeta acolchada resaltan los detalles a la vez que evocan las raíces de este calzado de básquet. El forro interno de felpa las hace fáciles de poner y quitar, mientras que la suela tipo cupsole de caucho te mantiene en control de tu juego."
+  },
+  {
+    "id": "JQ5258",
+    "name": "Zapatillas Forum2000",
+    "category": "Urbanas",
+    "gender": "Mujer",
+    "price": 350,
+    "brand": "Adidas",
+    "images": [
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/06576ce3f32f41bda5a8e185354b09eb_9366/Zapatillas_Forum2000_Blanco_JQ5258_01_00_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/39c81e5ef04b4d5fb0c3853cbec0f566_9366/Zapatillas_Forum2000_Blanco_JQ5258_02_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/007a36171e2149a2a2e82c4a15492cb4_9366/Zapatillas_Forum2000_Blanco_JQ5258_03_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/cee330338fdc43cc9c71a652fddc0365_9366/Zapatillas_Forum2000_Blanco_JQ5258_04_standard.jpg"
+    ],
+    "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/06576ce3f32f41bda5a8e185354b09eb_9366/Zapatillas_Forum2000_Blanco_JQ5258_01_00_standard.jpg",
+    "sizes": [
+      5.5, 6, 6.5, 7, 7.5, 8, 8.5
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "available": true,
+    "description": "Las zapatillas adidas Forum2000 exuden energía retro. La actitud Y2K se intensifica con detalles extragrandes y un aspecto robusto. El exterior está fabricado con gamuza y cuero, lo que añade textura y profundidad al diseño. La suela tipo cupsole y la suela de caucho mantienen el aire clásico. Átatelas cuando quieras hacer una declaración."
+  },
+  {
+    "id": "JR0513",
+    "name": "Zapatillas Forum 2000",
+    "category": "Urbanas",
+    "gender": "Mujer",
+    "price": 350,
+    "brand": "Adidas",
+    "images": [
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/356e597a984f473abd0dd841de95e778_9366/Zapatillas_Forum_2000_Blanco_JR0513_01_00_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/f5dc84557d484c67927c62feb309b008_9366/Zapatillas_Forum_2000_Blanco_JR0513_02_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/2751e60c57d24a34a37fdeb4c8ecda7d_9366/Zapatillas_Forum_2000_Blanco_JR0513_03_standard.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/51e4afcbcccd477d9c2a668ab075468e_9366/Zapatillas_Forum_2000_Blanco_JR0513_04_standard.jpg"
+    ],
+    "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/356e597a984f473abd0dd841de95e778_9366/Zapatillas_Forum_2000_Blanco_JR0513_01_00_standard.jpg",
+    "sizes": [
+      4.5,
+      5,
+      5.5,
+      6,
+      6.5,
+      7,
+      7.5,
+      8,
+      8.5
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "available": true,
+    "description": "El año 2000 trajo un nuevo milenio, y con él, las zapatillas adidas Forum 2000. Ahora, más de dos décadas después, estas zapatillas vuelven. El diseño es un guiño al pasado con una lengüeta abullonada, bloques de color y pasadores robustos. Pero los detalles modernos, como las 3 Tiras anchas y las proporciones extragrandes, traen estas zapatillas clásicas de cuero firmemente al presente."
   },
   {
     "id": "310477_19",
@@ -366,7 +440,7 @@
       8.5
     ],
     "isNew": true,
-    "isFeatured": true,
+    "isFeatured": false,
     "available": false,
     "description": "Presentamos tus nuevas zapatillas favoritas de entrenamiento: las PWR Hybrid TR. Son la nueva innovación en calzado y están fabricadas con PUMAGRIP, para una mejor tracción, y ProFoam, para una comodidad inmejorable durante largas sesiones de ejercicios. Empieza tu próximo entrenamiento de la mejor manera con las PWR Hybrid TR."
   },
@@ -387,7 +461,7 @@
       9
     ],
     "isNew": true,
-    "isFeatured": true,
+    "isFeatured": false,
     "available": false,
     "description": "Inspiradas en el basketball, las Rebound Low vuelven para cambiar el juego. Esta versión V6 unisex te ofrece una capellada símil cuero de grano grueso y la marca PUMA en la lengüeta. Están pensadas para todos los días, vayas donde vayas."
   },
@@ -534,7 +608,7 @@
       10
     ],
     "isNew": true,
-    "isFeatured": true,
+    "isFeatured": false,
     "available": true,
     "description": "Las CA Match continúan con la tradición. Esta versión es la mezcla perfecta de estilo urbano y tenis. Con su diseño simple y de líneas limpias, son fáciles de combinar e ideales para todos los días."
   },
@@ -689,7 +763,7 @@
     "name": "Zapatillas Courtblock",
     "category": "Deportivas",
     "gender": "Mujer",
-    "price": 239,
+    "price": 229,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/bf6690fab57d4665a061689954b12de3_9366/Zapatillas_Courtblock_Blanco_IH1718_01_00_standard.jpg",
@@ -711,9 +785,32 @@
       9.5
     ],
     "isNew": true,
-    "isFeatured": true,
+    "isFeatured": false,
     "available": true,
     "description": "Enfréntate a tu día a día con estas zapatillas adidas. La parte superior de cuero sintético suave está forrado para mayor comodidad y complementado con un protector de punta. La clásica suela tipo cupsole de caucho es resistente y flexible. La paleta de colores tenues combina a la perfección con cualquier outfit que lleves puesto."
+  },
+  {
+    "id": "403566",
+    "name": "Zapatillas CA Pro Craft",
+    "category": "Urbanas",
+    "gender": "Mujer",
+    "price": 250,
+    "brand": "Puma",
+    "images": [
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/403566/01/sv01/fnd/PER/fmt/png/Zapatillas-CA-Pro-Craft-para-mujer.png",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/403566/01/bv/fnd/PER/fmt/png/Zapatillas-CA-Pro-Craft-para-mujer.png",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/403566/01/fv/fnd/PER/fmt/png/Zapatillas-CA-Pro-Craft-para-mujer.png",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/403566/01/rv/fnd/PER/fmt/png/Zapatillas-CA-Pro-Craft-para-mujer.png"
+    ],
+    "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,e_sharpen:95,w_2000,h_2000/global/403566/01/sv01/fnd/PER/fmt/png/Zapatillas-CA-Pro-Craft-para-mujer.png",
+    "sizes": [
+      6.5,
+      7.5
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "available": true,
+    "description": "Las zapatillas CA Pro Craft para mujer combinan un diseño clásico con detalles modernos. La parte superior de lona resistente y la suela de goma duradera las hacen ideales para el uso diario, mientras que los detalles metálicos en el logo PUMA y los ojales le dan un toque de estilo adicional."
   },
   {
     "id": "JH7991",

@@ -8,7 +8,18 @@ import { ArrowRight } from 'lucide-react';
 export default function Home() {
   const [searchParams] = useSearchParams();
   const genderFilter = searchParams.get('gender') || undefined;
+  const searchQuery = searchParams.get('search') || undefined;
   const navigate = useNavigate();
+
+  // Si hay búsqueda, mostrar resultados (con o sin filtro de género)
+  if (searchQuery) {
+    return (
+      <>
+        <Hero />
+        <ProductGrid searchQuery={searchQuery} genderFilter={genderFilter} />
+      </>
+    );
+  }
 
   // Si hay filtro de género, mostrar la vista filtrada completa
   if (genderFilter) {

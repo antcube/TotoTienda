@@ -1,11 +1,13 @@
-import { Search, Menu, Heart } from 'lucide-react';
+import { Menu, Heart, Search } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useFavorites } from '../context/FavoritesContext';
+import SearchSidebar from './SearchSidebar';
 import logo from '../assets/ZapaTopLogo.png';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { favoritesCount } = useFavorites();
@@ -63,18 +65,11 @@ export default function Navbar() {
 
           {/* Right Icons */}
           <div className="flex items-center space-x-4">
-            {/* Search Bar */}
-            <div className="hidden lg:flex items-center bg-gray-100 rounded-full px-4 py-2">
-              <Search className="w-5 h-5 text-gray-500 mr-2" />
-              <input
-                type="text"
-                placeholder="Buscar productos..."
-                className="bg-transparent outline-none text-sm w-48"
-              />
-            </div>
-
-            {/* Search Icon for mobile */}
-            <button className="lg:hidden p-2 hover:bg-gray-100 rounded-full transition">
+            {/* Search Icon - Mobile */}
+            <button 
+              onClick={() => setIsSearchOpen(true)}
+              className="md:hidden p-2 hover:bg-gray-100 rounded-full transition"
+            >
               <Search className="w-6 h-6 text-gray-700" />
             </button>
 
@@ -139,6 +134,13 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
+      {/* Search Sidebar */}
+      <SearchSidebar 
+        isOpen={isSearchOpen} 
+        onClose={() => setIsSearchOpen(false)}
+        currentGender={activeGender || undefined}
+      />
     </nav>
   );
 }

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import ProductCard from './ProductCard';
 import productsData from '../data/products.json';
-import { SlidersHorizontal, X, Loader2, Filter } from 'lucide-react';
+import { SlidersHorizontal, X, Loader2, Filter, Search } from 'lucide-react';
 
 interface Product {
   id: number | string;
@@ -22,12 +22,14 @@ interface Product {
 
 interface ProductGridProps {
   genderFilter?: string;
+  searchQuery?: string;
 }
 
-export default function ProductGrid({ genderFilter }: ProductGridProps) {
+export default function ProductGrid({ genderFilter, searchQuery: externalSearchQuery }: ProductGridProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>('Todos');
   const [selectedBrand, setSelectedBrand] = useState<string>('Todas');
   const [sortBy, setSortBy] = useState<string>('featured');
+  const [searchQuery, setSearchQuery] = useState<string>(externalSearchQuery || '');
   const [displayedCount, setDisplayedCount] = useState<number>(() => {
     // Restaurar la cantidad de productos cargados si existe
     const saved = sessionStorage.getItem(`displayedCount-${genderFilter || 'all'}`);
@@ -66,8 +68,8 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
     previousGenderFilter.current = genderFilter;
   }, [genderFilter]);
 
-  // Filter by gender first
-  // Products with gender "Unisex" should appear in both Hombre and Mujer categories (not in Niños)
+  // Filter products
+  // Step 1: Filter by gender first (if specified)
   let filteredProducts: Product[] = genderFilter
     ? productsData.filter((p) => {
         if (p.gender === genderFilter) return true;
@@ -77,15 +79,30 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
       })
     : productsData;
 
-  // Then filter by category
-  filteredProducts = selectedCategory === 'Todos'
-    ? filteredProducts
-    : filteredProducts.filter((p) => p.category === selectedCategory);
+  // Step 2: Apply search query (if specified) to already filtered products
+  if (searchQuery) {
+    const query = searchQuery.toLowerCase();
+    filteredProducts = filteredProducts.filter((p) =>
+      p.name.toLowerCase().includes(query) ||
+      p.brand.toLowerCase().includes(query) ||
+      p.category.toLowerCase().includes(query) ||
+      p.description.toLowerCase().includes(query)
+    );
+  }
 
-  // Filter by brand
-  filteredProducts = selectedBrand === 'Todas'
-    ? filteredProducts
-    : filteredProducts.filter((p) => p.brand === selectedBrand);
+  // Step 3: Filter by category (only if not external search)
+  if (!externalSearchQuery) {
+    filteredProducts = selectedCategory === 'Todos'
+      ? filteredProducts
+      : filteredProducts.filter((p) => p.category === selectedCategory);
+  }
+
+  // Step 4: Filter by brand (only if not external search)
+  if (!externalSearchQuery) {
+    filteredProducts = selectedBrand === 'Todas'
+      ? filteredProducts
+      : filteredProducts.filter((p) => p.brand === selectedBrand);
+  }
 
   // Sort products
   filteredProducts = [...filteredProducts].sort((a, b) => {
@@ -121,6 +138,15 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
       previousSort.current = sortBy;
     }
   }, [selectedCategory, selectedBrand, sortBy, genderFilter]);
+
+  // Sync external search query
+  useEffect(() => {
+    if (externalSearchQuery) {
+      setSearchQuery(externalSearchQuery);
+    } else if (!genderFilter) {
+      setSearchQuery('');
+    }
+  }, [externalSearchQuery, genderFilter]);
 
   // Guardar la cantidad de productos mostrados
   useEffect(() => {
@@ -161,12 +187,25 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            {genderFilter ? `Calzado para ${genderFilter}` : 'Nuestra Colección'}
+            {externalSearchQuery 
+              ? genderFilter 
+                ? `Resultados en ${genderFilter}` 
+                : 'Resultados de búsqueda'
+              : genderFilter 
+                ? `Calzado para ${genderFilter}` 
+                : 'Nuestra Colección'
+            }
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Encuentra las zapatillas perfectas para tu estilo y actividad
-          </p>
-          {genderFilter && (selectedCategory !== 'Todos' || selectedBrand !== 'Todas') && (
+          {searchQuery ? (
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {filteredProducts.length} {filteredProducts.length === 1 ? 'resultado' : 'resultados'} para "{searchQuery}"
+            </p>
+          ) : (
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Encuentra las zapatillas perfectas para tu estilo y actividad
+            </p>
+          )}
+          {genderFilter && !externalSearchQuery && (selectedCategory !== 'Todos' || selectedBrand !== 'Todas') && (
             <button
               onClick={() => {
                 setSelectedCategory('Todos');
@@ -181,7 +220,28 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
         </div>
 
         {/* Filters - Desktop */}
+        {!externalSearchQuery && (
         <div className="mb-8 space-y-4 hidden md:block">
+          {/* Search Bar */}
+          <div className="flex items-center bg-white rounded-lg px-4 py-3 shadow-sm border border-gray-200 max-w-md">
+            <Search className="w-5 h-5 text-gray-400 mr-3" />
+            <input
+              type="text"
+              placeholder="Buscar productos..."
+              className="flex-1 outline-none text-gray-700"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="p-1 hover:bg-gray-100 rounded-full transition"
+              >
+                <X className="w-4 h-4 text-gray-500" />
+              </button>
+            )}
+          </div>
+
           {/* Categories and Brands Row */}
           <div className="flex flex-col lg:flex-row gap-4 justify-between items-start lg:items-center">
             {/* Categories */}
@@ -244,9 +304,30 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
             </div>
           </div>
         </div>
+        )}
+
+        {/* Sort only - Desktop (when external search) */}
+        {externalSearchQuery && (
+        <div className="mb-8 hidden md:flex justify-end">
+          <div className="flex items-center gap-3">
+            <SlidersHorizontal className="w-5 h-5 text-gray-500" />
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="bg-white border border-gray-300 rounded-lg px-4 py-2.5 font-medium text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+            >
+              <option value="featured">Destacados</option>
+              <option value="price-low">Precio: Bajo a Alto</option>
+              <option value="price-high">Precio: Alto a Bajo</option>
+              <option value="name">Nombre A-Z</option>
+            </select>
+          </div>
+        </div>
+        )}
 
         {/* Filter Button - Mobile */}
         <div className="mb-6 md:hidden flex items-center gap-3">
+          {!externalSearchQuery && (
           <button
             onClick={() => setIsFilterOpen(true)}
             className="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-md hover:bg-blue-700 transition"
@@ -259,11 +340,12 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
               </span>
             )}
           </button>
+          )}
           
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="bg-white border border-gray-300 rounded-lg px-4 py-3 font-medium text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+            className={`bg-white border border-gray-300 rounded-lg px-4 py-3 font-medium text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none ${externalSearchQuery ? 'w-full' : ''}`}
           >
             <option value="featured">Destacados</option>
             <option value="price-low">$ Menor</option>
