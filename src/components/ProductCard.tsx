@@ -53,7 +53,8 @@ export default function ProductCard({
   };
 
   return (
-    <div 
+    <div
+      id={`product-${id}`}
       onClick={() => navigate(`/product/${id}`)}
       className="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
     >

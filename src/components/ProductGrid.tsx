@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import ProductCard from './ProductCard';
 import productsData from '../data/products.json';
@@ -28,8 +28,16 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>('Todos');
   const [selectedBrand, setSelectedBrand] = useState<string>('Todas');
   const [sortBy, setSortBy] = useState<string>('featured');
-  const [displayedCount, setDisplayedCount] = useState<number>(12);
+  const [displayedCount, setDisplayedCount] = useState<number>(() => {
+    // Restaurar la cantidad de productos cargados si existe
+    const saved = sessionStorage.getItem(`displayedCount-${genderFilter || 'all'}`);
+    return saved ? parseInt(saved) : 12;
+  });
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
+  const previousGenderFilter = useRef(genderFilter);
+  const previousCategory = useRef('Todos');
+  const previousBrand = useRef('Todas');
+  const previousSort = useRef('featured');
 
   const { ref, inView } = useInView({
     threshold: 0.1,
@@ -42,6 +50,21 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
     : ['Todos', 'Deportivas', 'Outdoor', 'Urbanas'];
 
   const brands = ['Todas', 'Adidas', 'Puma'];
+
+  // Reset filters when gender filter changes
+  useEffect(() => {
+    if (previousGenderFilter.current !== genderFilter) {
+      setSelectedCategory('Todos');
+      setSelectedBrand('Todas');
+      setSortBy('featured');
+      setDisplayedCount(12);
+      sessionStorage.removeItem(`displayedCount-${genderFilter || 'all'}`);
+      previousCategory.current = 'Todos';
+      previousBrand.current = 'Todas';
+      previousSort.current = 'featured';
+    }
+    previousGenderFilter.current = genderFilter;
+  }, [genderFilter]);
 
   // Filter by gender first
   // Products with gender "Unisex" should appear in both Hombre and Mujer categories (not in Niños)
@@ -84,10 +107,27 @@ export default function ProductGrid({ genderFilter }: ProductGridProps) {
     return 0;
   });
 
-  // Reset displayed count when filters change
+  // Reset displayed count when filters change manually
   useEffect(() => {
-    setDisplayedCount(12);
-  }, [genderFilter, selectedCategory, selectedBrand, sortBy]);
+    const categoryChanged = previousCategory.current !== selectedCategory;
+    const brandChanged = previousBrand.current !== selectedBrand;
+    const sortChanged = previousSort.current !== sortBy;
+    
+    if (categoryChanged || brandChanged || sortChanged) {
+      setDisplayedCount(12);
+      sessionStorage.removeItem(`displayedCount-${genderFilter || 'all'}`);
+      previousCategory.current = selectedCategory;
+      previousBrand.current = selectedBrand;
+      previousSort.current = sortBy;
+    }
+  }, [selectedCategory, selectedBrand, sortBy, genderFilter]);
+
+  // Guardar la cantidad de productos mostrados
+  useEffect(() => {
+    if (displayedCount > 12) {
+      sessionStorage.setItem(`displayedCount-${genderFilter || 'all'}`, displayedCount.toString());
+    }
+  }, [displayedCount, genderFilter]);
 
   // Load more products when scroll trigger is in view
   useEffect(() => {

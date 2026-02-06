@@ -111,7 +111,7 @@ export default function ProductDetail() {
       <div className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <button
-            onClick={() => navigate('/')}
+            onClick={() => navigate(-1)}
             className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition"
           >
             <ArrowLeft className="w-5 h-5" />
