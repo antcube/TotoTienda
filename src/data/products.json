@@ -631,7 +631,7 @@
       6.5
     ],
     "isNew": true,
-    "isFeatured": true,
+    "isFeatured": false,
     "available": true,
     "description": "Las RS-X están de vuelta. Su silueta retro-futurista regresa con una estética progresista y detalles angulosos, que se complementa con apliques de nobuk y gamuza. Esta versión tiene un diseño disruptivo, para que vos muestres tu estilo disruptivo."
   },
@@ -680,7 +680,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": false,
+    "available": true,
     "description": "Zapatillas Urbanas Hombre Bearcliff con un diseño moderno y versátil, ideales para el día a día. Confeccionadas con materiales de alta calidad, ofrecen comodidad y estilo en cada paso."
   },
   {
