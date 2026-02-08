@@ -662,6 +662,28 @@
     "description": "Esta nueva versión de las clásicas zapatillas Suede se inspira en la herencia de PUMA en el mundo del breakdance y en su influencia en el streetwear moderno. Las Suede XL conservan su ADN icónico, pero le dan un giro con un cuello y lengüeta exageradamente acolchados, además de una suela más gruesa. Esta versión luce un empeine completamente en gamuza y una Formstrip PUMA en cuero."
   },
   {
+    "id": "883472677",
+    "name": "Zapatillas Urbanas Hombre Bearcliff",
+    "category": "Urbanas",
+    "gender": "Hombre",
+    "price": 80,
+    "brand": "Bearcliff",
+    "images": [
+      "https://media.falabella.com/falabellaPE/883472677_1/w=1200,h=1200,fit=pad",
+      "https://media.falabella.com/falabellaPE/883472677_2/w=1200,h=1200,fit=pad",
+      "https://media.falabella.com/falabellaPE/883472677_3/w=1200,h=1200,fit=pad",
+      "https://media.falabella.com/falabellaPE/883472677_4/w=1200,h=1200,fit=pad"
+    ],
+    "image": "https://media.falabella.com/falabellaPE/883472677_1/w=1200,h=1200,fit=pad",
+    "sizes": [
+      39
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "available": false,
+    "description": "Zapatillas Urbanas Hombre Bearcliff con un diseño moderno y versátil, ideales para el día a día. Confeccionadas con materiales de alta calidad, ofrecen comodidad y estilo en cada paso."
+  },
+  {
     "id": "JR9525",
     "name": "Zapatillas Park St 2.0",
     "category": "Urbanas",
