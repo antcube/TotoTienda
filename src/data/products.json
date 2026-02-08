@@ -684,6 +684,35 @@
     "description": "Zapatillas Urbanas Hombre Bearcliff con un diseño moderno y versátil, ideales para el día a día. Confeccionadas con materiales de alta calidad, ofrecen comodidad y estilo en cada paso."
   },
   {
+    "id": "JQ2217",
+    "name": "Zapatillas para senderismo Terrex Skychaser Ax5",
+    "category": "Outdoor",
+    "gender": "Hombre",
+    "price": 250,
+    "brand": "Adidas",
+    "images": [
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/3fd91bfbcd1e4cf5ab343b901310b9ba_9366/Zapatillas_para_senderismo_Terrex_Skychaser_Ax5_Plomo_JQ2217_HM1.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbc92b74604a4a488f9ca23c45c4660d_9366/Zapatillas_para_senderismo_Terrex_Skychaser_Ax5_Plomo_JQ2217_HM3_hover.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/c61e6a44d44b4a63ab9ed616ce0648fe_9366/Zapatillas_para_senderismo_Terrex_Skychaser_Ax5_Plomo_JQ2217_HM4.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/d2d14c964f6b4b5ba6966c19af96b97f_9366/Zapatillas_para_senderismo_Terrex_Skychaser_Ax5_Plomo_JQ2217_HM5.jpg"
+    ],
+    "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/3fd91bfbcd1e4cf5ab343b901310b9ba_9366/Zapatillas_para_senderismo_Terrex_Skychaser_Ax5_Plomo_JQ2217_HM1.jpg",
+    "sizes": [
+      7,
+      7.5,
+      8,
+      8.5,
+      9,
+      9.5,
+      10,
+      10.5
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "available": true,
+    "description": "Desde el inicio del sendero hasta la cresta alpina, estos zapatos de caminata adidas te mantienen en movimiento con comodidad. La mediasuela de EVA LIGHTMOTION les confiere una sensación de rapidez y ligereza, mientras proporciona refuerzo y amortiguación en terrenos robustos. El exterior de tejido antidesgarre duradero con superposiciones añadidas resiste los senderos ásperos y rocosos, mientras que la suela de caucho Continental™ con tacos se agarra en todas las condiciones para que puedas explorar con confianza."
+  },
+  {
     "id": "JR9525",
     "name": "Zapatillas Park St 2.0",
     "category": "Urbanas",
