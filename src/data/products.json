@@ -3417,5 +3417,34 @@
     "isFeatured": true,
     "available": true,
     "description": "Desde sus inicios como zapatillas adidas Samba, las adidas Samba llevan más de 70 años dejando huella, y aún no han terminado. Esta versión recibe el tratamiento XLG, manteniéndose fiel al aspecto original de las Samba y añadiendo un toque utilitario. El exterior de cuero y material textil está rematado con una punta de gamuza, las emblemáticas 3 Tiras y un refuerzo del talón para facilitar el calce. La suela de caucho oscura añade actitud al diseño definido y clásico."
+  },
+  {
+    "id": "ID8796",
+    "name": "Zapatillas adidas VL Court 3.0 Low Skateboarding",
+    "category": "Urbanas",
+    "gender": "Mujer",
+    "price": 240,
+    "brand": "Adidas",
+    "images": [
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/f019c4a6e54444a690e2ae6c85730c02_9366/Zapatillas_adidas_VL_Court_3.0_Low_Skateboarding_Negro_ID8796_HM1.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/15dd77117afb41f5b44b8bd07bd7b432_9366/Zapatillas_adidas_VL_Court_3.0_Low_Skateboarding_Negro_ID8796_HM3_hover.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/8ab0590b7df945f0a13780eb71e37da0_9366/Zapatillas_adidas_VL_Court_3.0_Low_Skateboarding_Negro_ID8796_HM4.jpg",
+      "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/7495b842df14442a8b1e90b7672ad122_9366/Zapatillas_adidas_VL_Court_3.0_Low_Skateboarding_Negro_ID8796_HM5.jpg"
+    ],
+    "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/f019c4a6e54444a690e2ae6c85730c02_9366/Zapatillas_adidas_VL_Court_3.0_Low_Skateboarding_Negro_ID8796_HM1.jpg",
+    "sizes": [
+      5,
+      5.5,
+      6,
+      6.5,
+      7,
+      7.5,
+      8,
+      8.5
+    ],
+    "isNew": true,
+    "isFeatured": true,
+    "available": true,
+    "description": "Elegantes o informales. Tú decides. Estas zapatillas adidas combinan a la perfección con prácticamente todo lo que tienes en tu armario. La suela de caucho vulcanizada está inspirada en el parque de skate y es perfecta para explorar la ciudad. La parte superior de gamuza suave añade un toque de elegancia. En el interior, la amortiguación ligera y el forro interno suave brindan soporte al pie día tras día."
   }
 ]
