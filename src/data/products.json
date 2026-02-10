@@ -837,7 +837,7 @@
     ],
     "isNew": true,
     "isFeatured": false,
-    "available": true,
+    "available": false,
     "description": "Enfréntate a tu día a día con estas zapatillas adidas. La parte superior de cuero sintético suave está forrado para mayor comodidad y complementado con un protector de punta. La clásica suela tipo cupsole de caucho es resistente y flexible. La paleta de colores tenues combina a la perfección con cualquier outfit que lleves puesto."
   },
   {
@@ -1180,7 +1180,7 @@
     "name": "Zapatillas Hoops 4.0 para niños",
     "category": "Urbanas",
     "gender": "Niños",
-    "price": 169,
+    "price": 190,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/a624a6c774f940f6a192c99c3416f2d9_9366/Zapatillas_Hoops_4.0_para_ninos_Blanco_JQ7852_01_00_standard.jpg",
@@ -1203,7 +1203,7 @@
     "name": "Zapatillas Duramo SL Kids",
     "category": "Deportivas",
     "gender": "Niños",
-    "price": 165,
+    "price": 175,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/becf1048649e424e97700b5e1ef3c61a_9366/Zapatillas_Duramo_SL_Kids_Azul_IH3596_01_00_standard.jpg",
@@ -1228,7 +1228,7 @@
     "name": "Zapatillas Tensaur Run 3.0 para niños",
     "category": "Deportivas",
     "gender": "Niños",
-    "price": 165,
+    "price": 170,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/e5ba8fa10ece401285fc7b9be4fcf6e4_9366/Zapatillas_Tensaur_Run_3.0_para_ninos_Blanco_JR6047_01_00_standard.jpg",
@@ -1283,10 +1283,10 @@
   },
   {
     "id": "JQ3062",
-    "name": "Zapatillas Breakbase para niños",
+    "name": "Zapatillas Breakbase",
     "category": "Urbanas",
     "gender": "Niños",
-    "price": 169,
+    "price": 175,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/680dca9437a145d0b93d204682549f51_9366/Zapatillas_Breakbase_para_ninos_Azul_JQ3062_01_00_standard.jpg",
@@ -1314,7 +1314,7 @@
     "name": "Zapatillas Streettalk",
     "category": "Urbanas",
     "gender": "Niños",
-    "price": 165,
+    "price": 170,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/e8251a47536444aa90bb797ff2cf5519_9366/Zapatillas_Streettalk_Blanco_JQ8612_01_00_standard.jpg",
@@ -1340,10 +1340,10 @@
   },
   {
     "id": "JP9390",
-    "name": "Zapatillas Runfalcon 5 Niños",
+    "name": "Zapatillas Runfalcon 5",
     "category": "Deportivas",
     "gender": "Niños",
-    "price": 190,
+    "price": 220,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/de0dfc979e5a47c5a95d16c5d742efc6_9366/Zapatillas_Runfalcon_5_Ninos_Azul_JP9390_HM1.jpg",
@@ -1392,7 +1392,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Los chimpunes de fútbol Breaknet 3.0, diseñados para jóvenes atletas listos para entrar en la cancha, ofrecen una mezcla de estilo y funcionalidad que les ayudará a moverse con confianza. \n\nTanto si se trata de un partido informal como de uno de competición, estos chimpunes están fabricados para soportar cada paso. El exterior de tela ofrece un ajuste cómodo, permitiendo un movimiento natural durante el juego y la práctica. Y la suela de caucho proporciona un agarre y una tracción fiables para esos giros y carreras rápidas en la cancha. \n\nadidas aporta su herencia de rendimiento e innovación a estos chimpunes de fútbol para niños, dando a tu hijo el equipamiento que necesita para disfrutar del juego."
   },
   {
@@ -1431,7 +1431,7 @@
     "name": "Zapatillas Ligra 8 de cancha cubierta para niños",
     "category": "Deportivas",
     "gender": "Niños",
-    "price": 180,
+    "price": 200,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/832887874fef4837890c98ecb683c4cd_9366/Zapatillas_Ligra_8_de_cancha_cubierta_para_ninos_Purpura_JP7279_01_00_standard.jpg",
@@ -1441,7 +1441,7 @@
     ],
     "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/832887874fef4837890c98ecb683c4cd_9366/Zapatillas_Ligra_8_de_cancha_cubierta_para_ninos_Purpura_JP7279_01_00_standard.jpg",
     "sizes": [
-      3.5
+      3.5, 4
     ],
     "isNew": true,
     "isFeatured": true,
@@ -1464,7 +1464,6 @@
     "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/8420564ddfac44aca4812374c0435507_9366/Zapatillas_Breaknet_3.0_para_ninos_Blanco_JR8446_01_00_standard.jpg",
     "sizes": [
       3.5,
-      4,
       6
     ],
     "isNew": true,
@@ -1530,7 +1529,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Serás el dueño de la cancha con estas zapatillas adidas de cancha cubierta para niños. Tanto si juegas al voleibol como al balonmano, las zapatillas Ligra 8 están hechas para seguirte el ritmo. El exterior de malla transpirable está reforzado con capas superpuestas de material sintético para mayor durabilidad. Una mediasuela de apoyo amortigua cada uno de tus movimientos, mientras que la suela de caucho proporciona el agarre que necesitas para cortes rápidos y paradas repentinas.\n\nEste producto contiene al menos un 20 % de materiales reciclados. Utilizando materiales reciclados disminuimos los residuos, nuestra dependencia de los recursos finitos y la huella que generan los productos que fabricamos."
   },
   {
@@ -3194,7 +3193,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Prepárate para explorar el mundo. Ya sea que prefieras correr o caminar, estas zapatillas de trail running adidas Terrex brindan soporte a tu esfuerzo con la combinación ideal entre amortiguación, comodidad y transpirabilidad. El exterior reforzado ofrece durabilidad y soporte para extender tu rango en los senderos."
   },
   {
@@ -3222,7 +3221,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Prepárate para explorar el mundo. Ya sea que prefieras correr o caminar, estas zapatillas de trail running adidas Terrex brindan soporte a tu esfuerzo con la combinación ideal entre amortiguación, comodidad y transpirabilidad. El exterior reforzado ofrece durabilidad y soporte para extender tu rango en los senderos."
   },
   {
