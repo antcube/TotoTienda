@@ -347,7 +347,7 @@
     "name": "Zapatillas Forum2000",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 350,
+    "price": 400,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/8f14dec40d404d8dae819a7f8c09a349_9366/Zapatillas_Forum2000_Azul_JQ1526_01_00_standard.jpg",
@@ -783,7 +783,7 @@
     "name": "Zapatillas Run 72",
     "category": "Deportivas",
     "gender": "Mujer",
-    "price": 245,
+    "price": 240,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/61fb117c7951445ea0b33b99e1d0f56a_9366/Zapatillas_Run_72_Blanco_JR8587_HM1.jpg",
@@ -928,7 +928,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Envuelve tus pies con comodidad y hazte notar con las zapatillas adidas Crazychaos 2000. Su exterior de malla transpirable permite que tus pies respiren con facilidad, mientras que la mediasuela Cloudfoam amortigua cada paso con suavidad y amortiguación. Ya sea que estés caminando por las calles de la ciudad o descansando en tu cafetería favorita, su diseño versátil combina a la perfección con todo, desde pantalones deportivos hasta jeans."
   },
   {
@@ -936,7 +936,7 @@
     "name": "Zapatillas adidas Grand Court Platforma",
     "category": "Deportivas",
     "gender": "Mujer",
-    "price": 215,
+    "price": 205,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/c36762c9c51e404389e728c9d8ad9300_9366/Zapatillas_adidas_Grand_Court_Platforma_Rosado_JR0701_HM1.jpg",
@@ -946,9 +946,10 @@
     ],
     "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/c36762c9c51e404389e728c9d8ad9300_9366/Zapatillas_adidas_Grand_Court_Platforma_Rosado_JR0701_HM1.jpg",
     "sizes": [
+      6.5,
+      7,
       8.5,
-      9,
-      9.5
+      9
     ],
     "isNew": true,
     "isFeatured": true,
@@ -970,7 +971,8 @@
     ],
     "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/61e8b00dd6cb46f6945dad8101073f62_9366/Zapatillas_NY_90_Blanco_GY8258_01_standard.jpg",
     "sizes": [
-      5
+      5,
+      7.5
     ],
     "isNew": true,
     "isFeatured": true,
@@ -1033,7 +1035,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Conecta con el pulso de tu ciudad en estas zapatillas adidas. El estilo fresco y limpio está listo para todo. La suela tipo cupsole de caucho y el exterior de cuero sintético te mantienen cómodo de la mañana a la noche."
   },
   {
@@ -1082,7 +1084,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Estas zapatillas adidas toman el ADN de los estilos de cancha clásicos y lo remezclan para la actualidad. El exterior de cuero se combina con detalles de gamuza para lograr un acabado con elementos minimalistas de la marca para un look sencillo pero elevado, siempre a la moda."
   },
   {
@@ -1105,7 +1107,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Enfréntate a tu día a día con estas zapatillas adidas. La parte superior de cuero sintético suave está forrado para mayor comodidad y complementado con un protector de punta. La clásica suela tipo cupsole de caucho es resistente y flexible. La paleta de colores tenues combina a la perfección con cualquier outfit que lleves puesto."
   },
   {
@@ -1127,7 +1129,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Enfréntate a tu día a día con estas zapatillas adidas. La parte superior de cuero sintético suave está forrado para mayor comodidad y complementado con un protector de punta. La clásica suela tipo cupsole de caucho es resistente y flexible. La paleta de colores tenues combina a la perfección con cualquier outfit que lleves puesto."
   },
   {
@@ -1149,7 +1151,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Cálzate estas zapatillas adidas y estarás listo para lo que te depare el día. Su mediasuela Cloudfoam amortigua cada paso, y te mantiene cómodo tanto si sales a explorar la ciudad como si te relajas en tu cafetería favorita. El exterior de tela y el forro son suaves y transpirables, perfectos para los días más cálidos."
   },
   {
@@ -2383,7 +2385,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Courtblock es un nuevo producto para Mujer de adidas. Te invitamos a ver las imágenes para apreciar más detalles desde diferentes ángulos. Si ya conoces Courtblock puedes dejar una reseña abajo; siempre nos encanta conocer tu opinión."
   },
   {
@@ -2433,7 +2435,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Átate las zapatillas adidas VL Court 3.0 y disfruta de la versatilidad de un look moderno y atemporal. El exterior de gamuza de primera calidad y de cuero sintético es un complemento icónico para la suela de caucho. El diseño de punta en T y las distintivas 3 Tiras ofrecen un toque atlético a tus conjuntos de diario. El aspecto clásico de estas zapatillas adidas siempre está de moda."
   },
   {
@@ -2455,7 +2457,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Una actualización moderna de un estilo icónico, estas zapatillas adidas Grand Court 2.0 brindan una comodidad superior y una flexibilidad mejorada. El exterior de cuero sintético se complementa con una mediasuela Cloudfoam para una amortiguación ligera y una pisada suave en cada paso. Ya sea que estés caminando por el asfalto o descansando, las zapatillas adidas Grand Court 2.0 te ofrecen la comodidad y el estilo que tu día a día necesita."
   },
   {
@@ -2463,7 +2465,7 @@
     "name": "Zapatillas Turnaround",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 230,
+    "price": 240,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/33a23f1f64154c9597096240b16e676e_9366/Zapatillas_Turnaround_Azul_JR1467_01_00_standard.jpg",
@@ -2473,7 +2475,7 @@
     ],
     "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/33a23f1f64154c9597096240b16e676e_9366/Zapatillas_Turnaround_Azul_JR1467_01_00_standard.jpg",
     "sizes": [
-      7.5, 8, 8.5, 9
+      8.5, 9
     ],
     "isNew": true,
     "isFeatured": true,
@@ -2485,7 +2487,7 @@
     "name": "Zapatillas Run 72",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 180,
+    "price": 170,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/b6d7a14fc6a4416b91e280a5f4e190af_9366/Zapatillas_Run_72_Purpura_JR8853_HM1.jpg",
@@ -2525,7 +2527,6 @@
       5,
       5.5,
       7,
-      7.5,
       8
     ],
     "isNew": true,
@@ -2566,7 +2567,7 @@
     "name": "Zapatillas Handball Spezial",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 350,
+    "price": 405,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/39c560f80377488bb3640638769c549f_9366/Zapatillas_Handball_Spezial_Beige_JQ8903_01_00_standard.jpg",
@@ -2593,7 +2594,7 @@
     "name": "Zapatillas Drop Step Low 2.0",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 310,
+    "price": 350,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/14dd1adfd92d482f87107e38629e504b_9366/Zapatillas_Drop_Step_Low_2.0_Blanco_KI3415_01_00_standard.jpg",
@@ -2603,12 +2604,9 @@
     ],
     "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/14dd1adfd92d482f87107e38629e504b_9366/Zapatillas_Drop_Step_Low_2.0_Blanco_KI3415_01_00_standard.jpg",
     "sizes": [
-      5.5,
-      6,
-      8,
-      8.5,
-      9,
-      9.5
+      6.5,
+      7,
+      9
     ],
     "isNew": true,
     "isFeatured": true,
@@ -2640,7 +2638,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Las zapatillas Superstar II se inspiran en los clásicos de adidas con un diseño arraigado en la historia de Originals, renovado con detalles que aportan un nuevo impacto al estilo de las zapatillas modernas.\n\nEl exterior de cuero premium proporciona durabilidad con un acabado refinado, mientras que el sistema de amarre de pasadores garantiza el ajuste y mantiene la elegancia del look para que puedas seguir con tu día con facilidad.\n\nAcabadas con las inconfundibles 3 Tiras y la característica puntera con relieve de adidas, estas zapatillas convierten el legado de la ropa deportiva en un estilo que brinda comodidad y versatilidad a diario."
   },
   {
@@ -2668,7 +2666,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Con raíces en la herencia adidas de los años 80, estas zapatillas ofrecen una versión moderna del icónico estilo Japan. El exterior de cuero y de tela y la suela de caucho proporcionan una estética clásica con una durabilidad a juego. Ya sea que estés explorando la ciudad o descansando en casa, este par de zapatillas te mantiene cómodo y elegante."
   },
   {
@@ -2690,7 +2688,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Ponte estas Zapatillas para Training adidas y prepárate para dominar tu entrenamiento HIIT. Cuentan con amortiguación Lightstrike Pro para lograr una sensación ligera y de gran rendimiento. El exterior de malla proporciona un refuerzo transpirable, mientras que el Torsion System ofrece una estabilidad adicional que te mantiene cómodo y seguro durante la combinación de alta intensidad de ejercicios de fuerza y cardiovasculares."
   },
   {
@@ -2719,7 +2717,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Estas modernas zapatillas adidas rinden homenaje al estilo clásico. La gamuza prémium y el nylon se unen para crear un exterior moderno diseñado para perdurar. La suela tipo cupsole de caucho y la clásica punta en T ofrecen comodidad para el día a día y un estilo retro. Ya sea para pasear por las calles de la ciudad o para relajarte en tu cafetería favorita, estas zapatillas son justo lo que necesitas."
   },
   {
@@ -2748,7 +2746,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Estas modernas zapatillas adidas rinden homenaje al estilo clásico. La gamuza prémium y el nylon se unen para crear un exterior moderno diseñado para perdurar. La suela tipo cupsole de caucho y la clásica punta en T ofrecen comodidad para el día a día y un estilo retro. Ya sea para pasear por las calles de la ciudad o para relajarte en tu cafetería favorita, estas zapatillas son justo lo que necesitas."
   },
   {
@@ -2756,7 +2754,7 @@
     "name": "Zapatillas Grand Court Alpha",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 270,
+    "price": 319,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/50605d4c18f2466bb00d98d1a3870997_9366/ZAPATILLAS_ADIDAS_GRAND_COURT_ALPHA_Marron_HQ7373_HM1.jpg",
@@ -2785,7 +2783,7 @@
     "name": "Zapatillas Forum2000",
     "category": "Originals",
     "gender": "Mujer",
-    "price": 340,
+    "price": 350,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/e0f7bb58a58f426ab3d738210e4a4e31_9366/Zapatillas_Forum2000_Negro_JR0509_01_00_standard.jpg",
@@ -2814,7 +2812,7 @@
     "name": "Zapatillas Campus 00s",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 325,
+    "price": 340,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/ec88ec85e02a4cf3b232e8957bd2640e_9366/Zapatillas_Campus_00s_Blanco_JQ5752_01_00_standard.jpg",
@@ -2865,7 +2863,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Las Zapatillas Barreda Lo son una nueva versión del estilo clásico. Inspirándose en los archivos, estas zapatillas son un guiño al extenso legado de adidas, a la vez que adoptan un estilo moderno y de perfil bajo.\nCon un perfil estilizado y un diseño de puntera en T, ofrecen un ajuste elegante y táctil, una gran elección para las aventuras informales en la ciudad.\nLas 3 Tiras en los laterales y el logotipo lineal añaden un toque del estilo clásico de adidas.\n\nFabricadas con materiales elegantes, el exterior ofrece durabilidad y un acabado atemporal, mientras que el forro suave ayuda a que los pies se sientan cómodos durante todo el día."
   },
   {
@@ -2873,7 +2871,7 @@
     "name": "Zapatillas de Senderismo Terrex Skychaser Ax5",
     "category": "Outdoor",
     "gender": "Mujer",
-    "price": 260,
+    "price": 280,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/53f22d991a5f4613be4c95e767187c89_9366/Zapatillas_de_Senderismo_Terrex_Skychaser_Ax5_Plomo_JQ2226_01_00_standard.jpg",
@@ -2902,7 +2900,7 @@
     "name": "Zapatillas Grand Court Alpha",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 250,
+    "price": 270,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/6a88066dcb944b95a8109f42116e2423_9366/Zapatillas_Grand_Court_Alpha_Marron_JQ7293_HM1.jpg",
@@ -2931,7 +2929,7 @@
     "name": "Zapatillas adidas VL Court 3.0 Low Skateboarding",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 240,
+    "price": 259,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/8c945389c5524f06a5ff1252494d0a27_9366/Zapatillas_adidas_VL_Court_3.0_Low_Skateboarding_Blanco_ID8797_HM1.jpg",
@@ -2960,7 +2958,7 @@
     "name": "Zapatillas Breaknet Sleek",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 230,
+    "price": 250,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/7d1d60d264ba474abbb77282654d12f2_9366/Zapatillas_Breaknet_Sleek_Verde_IH1369_01_00_standard.jpg",
@@ -2989,7 +2987,7 @@
     "name": "Zapatillas Breaknet Sleek",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 230,
+    "price": 250,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/6fafa777be4944c69e6c77fc2a64bfea_9366/Zapatillas_Breaknet_Sleek_Marron_IH1370_01_00_standard.jpg",
@@ -3018,7 +3016,7 @@
     "name": "Zapatillas Aspyre 00s",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 265,
+    "price": 280,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/29782c193fbd46eeba4a9b51b12b1c1e_9366/Zapatillas_Aspyre_00s_Beige_JQ5587_01_00_standard.jpg",
@@ -3245,7 +3243,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Cada carrera es un viaje de descubrimiento. Ponte estas zapatillas de running adidas y libera tu potencial. La mediasuela con amortiguación Cloudfoam te ofrece una pisada más cómoda mientras aumentas tu resistencia."
   },
   {
@@ -3275,7 +3273,7 @@
     "name": "Zapatillas adidas VL Court Base",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 185,
+    "price": 200,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/4724041b48f8401b875fbd1372a9e410_9366/Zapatillas_adidas_VL_Court_Base_Negro_ID3712_HM1.jpg",
@@ -3285,7 +3283,7 @@
     ],
     "image": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/4724041b48f8401b875fbd1372a9e410_9366/Zapatillas_adidas_VL_Court_Base_Negro_ID3712_HM1.jpg",
     "sizes": [
-      6, 7.5, 8, 9, 9.5
+      8, 8.5, 9
     ],
     "isNew": true,
     "isFeatured": true,
@@ -3318,7 +3316,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Prepárate para explorar el mundo. Ya sea que prefieras correr o caminar, estas zapatillas de trail running adidas Terrex brindan soporte a tu esfuerzo con la combinación ideal entre amortiguación, comodidad y transpirabilidad"
   },
   {
@@ -3340,7 +3338,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "La herencia se une a la modernidad en las zapatillas Samba XLG de adidas, con una silueta Samba rediseñada que recibe el tratamiento XLG para darle una nueva profundidad, un diseño atrevido y un toque de confianza para las calles modernas.\n\nEl exterior de cuero les aporta un estilo clásico, mientras que los cuartos de nylon balístico añaden textura funcional. La puntera en T de gamuza y los ojales perforados son un guiño al modelo original, complementados con una lengüeta moldeada acolchada y una plantilla de EVA para mayor comodidad.\n\nEl distintivo de marca de las 3 Tiras añade una energía característica y ayudan a consolidar el look de unas zapatillas que lucen con orgullo el espíritu inconfundible de adidas Originals."
   },
   {
@@ -3370,7 +3368,7 @@
     ],
     "isNew": true,
     "isFeatured": true,
-    "available": true,
+    "available": false,
     "description": "Las zapatillas Samba OG dan vida al legado de adidas con un atractivo atemporal. Un auténtico ícono de la cultura futbolística, rediseñado para las calles de hoy, que combina el legado y la energía moderna en un diseño seguro. Están confeccionadas con un exterior de cuero premium para ofrecer elegancia y estilo clásicos. Diseñadas para el uso diario, la suela de caucho duradera aporta un agarre fiable y comodidad."
   },
   {
@@ -3378,7 +3376,7 @@
     "name": "Zapatillas Samba XLG",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 360,
+    "price": 430,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/6329ae161deb4dc1b3a65d36db7c3b58_9366/ZAPATILLAS_SAMBA_XLG_Verde_JP6813_01_00_standard.jpg",
@@ -3400,7 +3398,7 @@
     "name": "Zapatillas Samba XLG",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 360,
+    "price": 400,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/69ed6daa4a9e42fd8e22e5bdec673e98_9366/Zapatillas_Samba_XLG_Marron_JR0929_01_00_standard.jpg",
@@ -3422,7 +3420,7 @@
     "name": "Zapatillas adidas VL Court 3.0 Low Skateboarding",
     "category": "Urbanas",
     "gender": "Mujer",
-    "price": 240,
+    "price": 259,
     "brand": "Adidas",
     "images": [
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/f019c4a6e54444a690e2ae6c85730c02_9366/Zapatillas_adidas_VL_Court_3.0_Low_Skateboarding_Negro_ID8796_HM1.jpg",
