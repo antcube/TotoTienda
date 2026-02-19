@@ -42,6 +42,9 @@ export async function getProducts(): Promise<Product[]> {
   }
 
   if (!isSanityConfigured || !sanityClient) {
+    if (!import.meta.env.DEV) {
+      throw new Error("Sanity no está configurado en producción. Revisa VITE_SANITY_PROJECT_ID y VITE_SANITY_DATASET en Vercel.");
+    }
     cachedProducts = fallbackProducts as Product[];
     return cachedProducts;
   }
@@ -55,6 +58,9 @@ export async function getProducts(): Promise<Product[]> {
     cachedProducts = products;
     return products;
   } catch {
+    if (!import.meta.env.DEV) {
+      throw new Error("No se pudo cargar productos desde Sanity en producción.");
+    }
     cachedProducts = fallbackProducts as Product[];
     return cachedProducts;
   } finally {
