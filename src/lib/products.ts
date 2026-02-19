@@ -32,11 +32,16 @@ const productsQuery = `*[_type == "product"]|order(orderRank asc){
   description
 }`;
 
+let cachedProducts: Product[] | null = null;
 let pendingProducts: Promise<Product[]> | null = null;
 
 export async function getProducts(): Promise<Product[]> {
+  if (cachedProducts) {
+    return cachedProducts;
+  }
+
   if (!isSanityConfigured || !sanityClient) {
-    throw new Error("Sanity no está configurado. Define VITE_SANITY_PROJECT_ID y VITE_SANITY_DATASET.");
+    throw new Error("Sanity no esta configurado. Define VITE_SANITY_PROJECT_ID y VITE_SANITY_DATASET.");
   }
 
   if (!pendingProducts) {
@@ -44,7 +49,9 @@ export async function getProducts(): Promise<Product[]> {
   }
 
   try {
-    return await pendingProducts;
+    const products = await pendingProducts;
+    cachedProducts = products;
+    return products;
   } catch {
     throw new Error("No se pudo cargar productos desde Sanity.");
   } finally {
