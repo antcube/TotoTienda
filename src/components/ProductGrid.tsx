@@ -1,24 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import ProductCard from './ProductCard';
-import productsData from '../data/products.json';
 import { SlidersHorizontal, X, Loader2, Filter, Search } from 'lucide-react';
-
-interface Product {
-  id: number | string;
-  name: string;
-  category: string;
-  gender: string;
-  price: number;
-  image: string;
-  images: string[];
-  brand: string;
-  sizes: number[];
-  isNew?: boolean;
-  isFeatured?: boolean;
-  available?: boolean;
-  description: string;
-}
+import { useProducts } from '../hooks/useProducts';
+import type { Product } from '../lib/products';
+import ProductsSkeleton from './ProductsSkeleton';
 
 interface ProductGridProps {
   genderFilter?: string;
@@ -26,9 +12,10 @@ interface ProductGridProps {
 }
 
 export default function ProductGrid({ genderFilter, searchQuery: externalSearchQuery }: ProductGridProps) {
+  const { products, isLoading, error } = useProducts();
   const [selectedCategory, setSelectedCategory] = useState<string>('Todos');
   const [selectedBrand, setSelectedBrand] = useState<string>('Todas');
-  const [sortBy, setSortBy] = useState<string>('featured');
+  const [sortBy, setSortBy] = useState<string>('manual');
   const [searchQuery, setSearchQuery] = useState<string>(externalSearchQuery || '');
   const [displayedCount, setDisplayedCount] = useState<number>(() => {
     // Restaurar la cantidad de productos cargados si existe
@@ -39,7 +26,7 @@ export default function ProductGrid({ genderFilter, searchQuery: externalSearchQ
   const previousGenderFilter = useRef(genderFilter);
   const previousCategory = useRef('Todos');
   const previousBrand = useRef('Todas');
-  const previousSort = useRef('featured');
+  const previousSort = useRef('manual');
 
   const { ref, inView } = useInView({
     threshold: 0.1,
@@ -58,12 +45,12 @@ export default function ProductGrid({ genderFilter, searchQuery: externalSearchQ
     if (previousGenderFilter.current !== genderFilter) {
       setSelectedCategory('Todos');
       setSelectedBrand('Todas');
-      setSortBy('featured');
+      setSortBy('manual');
       setDisplayedCount(12);
       sessionStorage.removeItem(`displayedCount-${genderFilter || 'all'}`);
       previousCategory.current = 'Todos';
       previousBrand.current = 'Todas';
-      previousSort.current = 'featured';
+      previousSort.current = 'manual';
     }
     previousGenderFilter.current = genderFilter;
   }, [genderFilter]);
@@ -71,13 +58,13 @@ export default function ProductGrid({ genderFilter, searchQuery: externalSearchQ
   // Filter products
   // Step 1: Filter by gender first (if specified)
   let filteredProducts: Product[] = genderFilter
-    ? productsData.filter((p) => {
+    ? products.filter((p) => {
         if (p.gender === genderFilter) return true;
         // Unisex products only appear in Hombre and Mujer, not in Niños
         if (p.gender === 'Unisex' && (genderFilter === 'Hombre' || genderFilter === 'Mujer')) return true;
         return false;
       })
-    : productsData;
+    : products;
 
   // Step 2: Apply search query (if specified) to already filtered products
   if (searchQuery) {
@@ -116,11 +103,12 @@ export default function ProductGrid({ genderFilter, searchQuery: externalSearchQ
     if (sortBy === 'price-low') return a.price - b.price;
     if (sortBy === 'price-high') return b.price - a.price;
     if (sortBy === 'name') return a.name.localeCompare(b.name);
-    // Default: featured first, then new
-    if (a.isFeatured && !b.isFeatured) return -1;
-    if (!a.isFeatured && b.isFeatured) return 1;
-    if (a.isNew && !b.isNew) return -1;
-    if (!a.isNew && b.isNew) return 1;
+    if (sortBy === 'featured') {
+      if (a.isFeatured && !b.isFeatured) return -1;
+      if (!a.isFeatured && b.isFeatured) return 1;
+      if (a.isNew && !b.isNew) return -1;
+      if (!a.isNew && b.isNew) return 1;
+    }
     return 0;
   });
 
@@ -180,6 +168,21 @@ export default function ProductGrid({ genderFilter, searchQuery: externalSearchQ
       document.body.style.overflow = 'unset';
     };
   }, [isFilterOpen]);
+
+  if (isLoading) {
+    return <ProductsSkeleton />;
+  }
+
+  if (error) {
+    return (
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-lg text-gray-600">No pudimos cargar los productos.</p>
+          <p className="text-sm text-gray-400 mt-2">{error}</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-16 bg-gray-50">
@@ -272,6 +275,7 @@ export default function ProductGrid({ genderFilter, searchQuery: externalSearchQ
                 onChange={(e) => setSortBy(e.target.value)}
                 className="bg-white border border-gray-300 rounded-lg px-4 py-2.5 font-medium text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
               >
+                <option value="manual">Orden manual</option>
                 <option value="featured">Destacados</option>
                 <option value="price-low">Precio: Bajo a Alto</option>
                 <option value="price-high">Precio: Alto a Bajo</option>
@@ -316,6 +320,7 @@ export default function ProductGrid({ genderFilter, searchQuery: externalSearchQ
               onChange={(e) => setSortBy(e.target.value)}
               className="bg-white border border-gray-300 rounded-lg px-4 py-2.5 font-medium text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
             >
+              <option value="manual">Orden manual</option>
               <option value="featured">Destacados</option>
               <option value="price-low">Precio: Bajo a Alto</option>
               <option value="price-high">Precio: Alto a Bajo</option>
@@ -347,6 +352,7 @@ export default function ProductGrid({ genderFilter, searchQuery: externalSearchQ
             onChange={(e) => setSortBy(e.target.value)}
             className={`bg-white border border-gray-300 rounded-lg px-4 py-3 font-medium text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none ${externalSearchQuery ? 'w-full' : ''}`}
           >
+            <option value="manual">Orden manual</option>
             <option value="featured">Destacados</option>
             <option value="price-low">$ Menor</option>
             <option value="price-high">$ Mayor</option>

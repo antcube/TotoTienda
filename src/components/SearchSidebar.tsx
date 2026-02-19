@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Search, X, ArrowRight } from 'lucide-react';
+import { Search, X, ArrowRight, Loader2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import productsData from '../data/products.json';
+import { useProducts } from '../hooks/useProducts';
+import type { Product } from '../lib/products';
 
 interface SearchSidebarProps {
   isOpen: boolean;
@@ -11,14 +12,15 @@ interface SearchSidebarProps {
 
 export default function SearchSidebar({ isOpen, onClose, currentGender }: SearchSidebarProps) {
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<typeof productsData>([]);
+  const [searchResults, setSearchResults] = useState<Product[]>([]);
+  const { products, isLoading } = useProducts();
   const navigate = useNavigate();
 
   // Buscar productos en tiempo real
   useEffect(() => {
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
-      let results = productsData.filter((p) =>
+      let results = products.filter((p) =>
         p.name.toLowerCase().includes(query) ||
         p.brand.toLowerCase().includes(query) ||
         p.category.toLowerCase().includes(query) ||
@@ -39,7 +41,7 @@ export default function SearchSidebar({ isOpen, onClose, currentGender }: Search
     } else {
       setSearchResults([]);
     }
-  }, [searchQuery, currentGender]);
+  }, [searchQuery, currentGender, products]);
 
   const handleProductClick = (id: number | string) => {
     navigate(`/product/${id}`);
@@ -141,7 +143,16 @@ export default function SearchSidebar({ isOpen, onClose, currentGender }: Search
 
         {/* Results */}
         <div className="overflow-y-auto h-[calc(100vh-140px)] px-4">
-          {searchQuery && searchResults.length > 0 && (
+          {searchQuery && isLoading && (
+            <div className="text-center py-12">
+              <div className="inline-flex items-center gap-3 text-blue-600">
+                <Loader2 className="w-6 h-6 animate-spin" />
+                <span className="text-sm font-medium">Cargando productos...</span>
+              </div>
+            </div>
+          )}
+
+          {searchQuery && !isLoading && searchResults.length > 0 && (
             <>
               <div className="flex items-center justify-between mb-3">
                 <p className="text-sm text-gray-600">
@@ -185,7 +196,7 @@ export default function SearchSidebar({ isOpen, onClose, currentGender }: Search
             </>
           )}
 
-          {searchQuery && searchResults.length === 0 && (
+          {searchQuery && !isLoading && searchResults.length === 0 && (
             <div className="text-center py-12">
               <Search className="w-12 h-12 text-gray-300 mx-auto mb-3" />
               <p className="text-gray-500">No se encontraron resultados</p>

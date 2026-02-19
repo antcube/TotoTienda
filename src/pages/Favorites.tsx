@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { Heart, ShoppingBag, MessageCircle } from 'lucide-react';
+import { Heart, ShoppingBag, MessageCircle, Loader2 } from 'lucide-react';
 import { useFavorites } from '../context/FavoritesContext';
-import products from '../data/products.json';
 import ProductCard from '../components/ProductCard';
+import { useProducts } from '../hooks/useProducts';
 
 export default function Favorites() {
   const navigate = useNavigate();
   const { favorites, favoritesCount } = useFavorites();
+  const { products, isLoading, error } = useProducts();
 
   const favoriteProducts = products.filter((product) => favorites.includes(product.id));
 
@@ -26,6 +27,30 @@ export default function Favorites() {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center max-w-md px-4">
+          <div className="inline-flex items-center gap-3 text-blue-600">
+            <Loader2 className="w-6 h-6 animate-spin" />
+            <span className="text-lg font-medium">Cargando productos...</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center max-w-md px-4">
+          <p className="text-lg text-gray-600">No pudimos cargar los productos.</p>
+          <p className="text-sm text-gray-400 mt-2">{error}</p>
+        </div>
+      </div>
+    );
+  }
 
   if (favoritesCount === 0) {
     return (

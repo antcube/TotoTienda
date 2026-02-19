@@ -71,3 +71,26 @@ export default defineConfig([
   },
 ])
 ```
+
+## Deploy en Vercel con Sanity
+
+Esta app consume contenido de Sanity desde `src/lib/sanityClient.ts` usando variables de entorno de Vite.
+
+### Variables requeridas en Vercel
+
+- `VITE_SANITY_PROJECT_ID`
+- `VITE_SANITY_DATASET`
+
+Puedes usar `.env.example` como referencia local.
+
+### CORS en Sanity
+
+Para frontend público en Vercel, agrega como origen permitido:
+
+- `https://*.vercel.app`
+
+Para desarrollo local:
+
+- `http://localhost:5173`
+
+Si usas dominio propio en producción, agrega también ese dominio exacto en CORS.

@@ -2,14 +2,17 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import Hero from '../components/Hero';
 import ProductGrid from '../components/ProductGrid';
 import ProductCard from '../components/ProductCard';
-import productsData from '../data/products.json';
+import ProductsSkeleton from '../components/ProductsSkeleton';
 import { ArrowRight } from 'lucide-react';
+import { useProducts } from '../hooks/useProducts';
+import type { Product } from '../lib/products';
 
 export default function Home() {
   const [searchParams] = useSearchParams();
   const genderFilter = searchParams.get('gender') || undefined;
   const searchQuery = searchParams.get('search') || undefined;
   const navigate = useNavigate();
+  const { products, isLoading, error } = useProducts();
 
   // Si hay búsqueda, mostrar resultados (con o sin filtro de género)
   if (searchQuery) {
@@ -32,15 +35,38 @@ export default function Home() {
   }
 
   // Vista principal: Secciones separadas por género
-  const hombreProducts = productsData
+  if (isLoading) {
+    return (
+      <>
+        <Hero />
+        <ProductsSkeleton />
+      </>
+    );
+  }
+
+  if (error) {
+    return (
+      <>
+        <Hero />
+        <div className="bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 py-16 text-center">
+            <p className="text-lg text-gray-600">No pudimos cargar los productos.</p>
+            <p className="text-sm text-gray-400 mt-2">{error}</p>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  const hombreProducts = products
     .filter((p) => (p.gender === 'Hombre' || p.gender === 'Unisex') && p.isFeatured && p.available !== false)
     .slice(0, 8);
 
-  const mujerProducts = productsData
+  const mujerProducts = products
     .filter((p) => (p.gender === 'Mujer' || p.gender === 'Unisex') && p.isFeatured && p.available !== false)
     .slice(0, 8);
 
-  const ninosProducts = productsData
+  const ninosProducts = products
     .filter((p) => p.gender === 'Niños' && p.isFeatured && p.available !== false)
     .slice(0, 8);
 
@@ -50,7 +76,7 @@ export default function Home() {
     gender 
   }: { 
     title: string; 
-    products: typeof productsData; 
+    products: Product[]; 
     gender: string;
   }) => (
     <section className="py-12">

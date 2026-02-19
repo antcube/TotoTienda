@@ -1,10 +1,10 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, MessageCircle, Heart, Truck, Shield, RotateCcw, Ruler } from 'lucide-react';
+import { ArrowLeft, MessageCircle, Heart, Truck, Shield, RotateCcw, Ruler, Loader2 } from 'lucide-react';
 import { useState } from 'react';
-import products from '../data/products.json';
 import SizeGuideModal from '../components/SizeGuideModal';
 import type { SizeCategory } from '../data/sizeguides';
 import { useFavorites } from '../context/FavoritesContext';
+import { useProducts } from '../hooks/useProducts';
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -13,6 +13,7 @@ export default function ProductDetail() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showSizeGuide, setShowSizeGuide] = useState(false);
   const { toggleFavorite, isFavorite } = useFavorites();
+  const { products, isLoading, error } = useProducts();
 
   const product = products.find((p) => p.id.toString() === id);
   const isProductFavorite = product ? isFavorite(product.id) : false;
@@ -80,6 +81,28 @@ export default function ProductDetail() {
     }
     return 'all';
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="inline-flex items-center gap-3 text-blue-600">
+          <Loader2 className="w-6 h-6 animate-spin" />
+          <span className="text-lg font-medium">Cargando producto...</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <p className="text-lg text-gray-600">No pudimos cargar el producto.</p>
+          <p className="text-sm text-gray-400 mt-2">{error}</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!product) {
     return (
