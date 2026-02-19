@@ -1,4 +1,3 @@
-import fallbackProducts from "../data/products.json";
 import { isSanityConfigured, sanityClient } from "./sanityClient";
 
 export interface Product {
@@ -37,10 +36,7 @@ let pendingProducts: Promise<Product[]> | null = null;
 
 export async function getProducts(): Promise<Product[]> {
   if (!isSanityConfigured || !sanityClient) {
-    if (!import.meta.env.DEV) {
-      console.warn("Sanity no está configurado en producción. Usando fallback local.");
-    }
-    return fallbackProducts as Product[];
+    throw new Error("Sanity no está configurado. Define VITE_SANITY_PROJECT_ID y VITE_SANITY_DATASET.");
   }
 
   if (!pendingProducts) {
@@ -50,10 +46,7 @@ export async function getProducts(): Promise<Product[]> {
   try {
     return await pendingProducts;
   } catch {
-    if (!import.meta.env.DEV) {
-      console.warn("No se pudo cargar productos desde Sanity en producción. Usando fallback local.");
-    }
-    return fallbackProducts as Product[];
+    throw new Error("No se pudo cargar productos desde Sanity.");
   } finally {
     pendingProducts = null;
   }
