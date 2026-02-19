@@ -1,4 +1,5 @@
-import { sanityClient } from "./sanityClient";
+import fallbackProducts from "../data/products.json";
+import { isSanityConfigured, sanityClient } from "./sanityClient";
 
 export interface Product {
   id: number | string;
@@ -40,12 +41,23 @@ export async function getProducts(): Promise<Product[]> {
     return cachedProducts;
   }
 
+  if (!isSanityConfigured || !sanityClient) {
+    cachedProducts = fallbackProducts as Product[];
+    return cachedProducts;
+  }
+
   if (!pendingProducts) {
     pendingProducts = sanityClient.fetch<Product[]>(productsQuery);
   }
 
-  const products = await pendingProducts;
-  cachedProducts = products;
-  pendingProducts = null;
-  return products;
+  try {
+    const products = await pendingProducts;
+    cachedProducts = products;
+    return products;
+  } catch {
+    cachedProducts = fallbackProducts as Product[];
+    return cachedProducts;
+  } finally {
+    pendingProducts = null;
+  }
 }
