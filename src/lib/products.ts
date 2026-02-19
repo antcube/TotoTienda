@@ -33,20 +33,14 @@ const productsQuery = `*[_type == "product"]|order(orderRank asc){
   description
 }`;
 
-let cachedProducts: Product[] | null = null;
 let pendingProducts: Promise<Product[]> | null = null;
 
 export async function getProducts(): Promise<Product[]> {
-  if (cachedProducts) {
-    return cachedProducts;
-  }
-
   if (!isSanityConfigured || !sanityClient) {
     if (!import.meta.env.DEV) {
       throw new Error("Sanity no está configurado en producción. Revisa VITE_SANITY_PROJECT_ID y VITE_SANITY_DATASET en Vercel.");
     }
-    cachedProducts = fallbackProducts as Product[];
-    return cachedProducts;
+    return fallbackProducts as Product[];
   }
 
   if (!pendingProducts) {
@@ -54,15 +48,12 @@ export async function getProducts(): Promise<Product[]> {
   }
 
   try {
-    const products = await pendingProducts;
-    cachedProducts = products;
-    return products;
+    return await pendingProducts;
   } catch {
     if (!import.meta.env.DEV) {
       throw new Error("No se pudo cargar productos desde Sanity en producción.");
     }
-    cachedProducts = fallbackProducts as Product[];
-    return cachedProducts;
+    return fallbackProducts as Product[];
   } finally {
     pendingProducts = null;
   }
