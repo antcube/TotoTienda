@@ -15,7 +15,7 @@ export default function ProductGrid({ genderFilter, searchQuery: externalSearchQ
   const { products, isLoading, error } = useProducts();
   const [selectedCategory, setSelectedCategory] = useState<string>('Todos');
   const [selectedBrand, setSelectedBrand] = useState<string>('Todas');
-  const [sortBy, setSortBy] = useState<string>('manual');
+  const [sortBy, setSortBy] = useState<string>('featured');
   const [searchQuery, setSearchQuery] = useState<string>(externalSearchQuery || '');
   const [displayedCount, setDisplayedCount] = useState<number>(() => {
     // Restaurar la cantidad de productos cargados si existe
@@ -26,7 +26,7 @@ export default function ProductGrid({ genderFilter, searchQuery: externalSearchQ
   const previousGenderFilter = useRef(genderFilter);
   const previousCategory = useRef('Todos');
   const previousBrand = useRef('Todas');
-  const previousSort = useRef('manual');
+  const previousSort = useRef('featured');
 
   const { ref, inView } = useInView({
     threshold: 0.1,
@@ -45,12 +45,12 @@ export default function ProductGrid({ genderFilter, searchQuery: externalSearchQ
     if (previousGenderFilter.current !== genderFilter) {
       setSelectedCategory('Todos');
       setSelectedBrand('Todas');
-      setSortBy('manual');
+      setSortBy('featured');
       setDisplayedCount(12);
       sessionStorage.removeItem(`displayedCount-${genderFilter || 'all'}`);
       previousCategory.current = 'Todos';
       previousBrand.current = 'Todas';
-      previousSort.current = 'manual';
+      previousSort.current = 'featured';
     }
     previousGenderFilter.current = genderFilter;
   }, [genderFilter]);

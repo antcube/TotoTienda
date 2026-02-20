@@ -5,6 +5,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import Favorites from './pages/Favorites';
+import AdminCatalog from './pages/AdminCatalog';
 import { FavoritesProvider } from './context/FavoritesContext';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/product/:id" element={<ProductDetail />} />
                         <Route path="/favorites" element={<Favorites />} />
+                        <Route path="/admin-catalog" element={<AdminCatalog />} />
                     </Routes>
                     <Footer />
                 </div>

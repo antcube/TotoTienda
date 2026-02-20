@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { getProducts, type Product } from "../lib/products";
 
-export function useProducts() {
+interface UseProductsOptions {
+  includeUnavailable?: boolean;
+}
+
+export function useProducts({ includeUnavailable = false }: UseProductsOptions = {}) {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -13,7 +17,10 @@ export function useProducts() {
     getProducts()
       .then((data) => {
         if (isActive) {
-          setProducts(data);
+          const visibleProducts = includeUnavailable
+            ? data
+            : data.filter((product) => product.available !== false);
+          setProducts(visibleProducts);
           setError(null);
         }
       })
@@ -32,7 +39,7 @@ export function useProducts() {
     return () => {
       isActive = false;
     };
-  }, []);
+  }, [includeUnavailable]);
 
   return { products, isLoading, error };
 }
